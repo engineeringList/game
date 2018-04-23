@@ -787,12 +787,20 @@ footer  .footer-content {
     cursor: pointer;
 }
 
+.moduleTan .moduleTanContent .verificationCode.prohibited {
+    background-color: #999999;
+    cursor: no-drop;
+}
+
 .moduleTan .moduleTanContent .sumbitBtn {
     width: 272px;
     height: 57px;
     background: url("../images/sumbit.png") center center no-repeat;
     margin: 0 auto;
     cursor: pointer;
+}
+.moduleTan .moduleTanContent .sumbitBtn.active {
+    opacity: 0.5;
 }
 
 .moduleTan  .closeBtn {
