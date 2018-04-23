@@ -131,7 +131,9 @@
             if(data.code == 1){
                 $('.moduleTan').hide();
                 $.backgroundHide();
-
+                $(".phone").val("");
+                $(".code").val("");
+                $(".verificationCode").text("获取验证码");
             }
             $(".sumbitBtn").removeClass("active");
             falg = false;
