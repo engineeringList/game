@@ -90,8 +90,8 @@
         if (!_phone){
             return $.alert("请输入手机号");
         }
-        var _http = "http://test.wwlin.cn"
-        $.getJSON(_http + "/api/sendSms?mobile=" + _phone + "&callback=?", function (data){
+
+        $.get("/api/sendSms?mobile=" + _phone + "&callback=?", function (data){
             console.log(data);
         })
     })
