@@ -6,11 +6,11 @@ const compress = require('koa-compress');
 const morgan = require('koa-morgan');
 const path = require('path');
 const fs = require('fs');
-const static = require('koa-static')
+const _static = require('koa-static');
 const app = new Koa();
 
 // 静态文件
-app.use(static(
+app.use(_static(
   path.join( __dirname,  './static')
 ));
 
