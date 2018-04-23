@@ -3,8 +3,13 @@
 const Koa = require('koa');
 const views = require('koa-views');
 const compress = require('koa-compress');
+const morgan = require('koa-morgan');
 const path = require('path');
+const fs = require('fs');
 const app = new Koa();
+
+// log
+app.use(morgan('combined'));
 
 // gzip
 const options = { threshold: 2048 };
