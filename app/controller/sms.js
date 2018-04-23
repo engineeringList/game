@@ -9,9 +9,7 @@ const SmsCtrl = {};
 SmsCtrl.send = async (ctx) => {
     const { mobile, type } = ctx.query;
     if (!isMobile(mobile)) {
-        ctx.body.code = -2;
-        ctx.body.msg = '手机号不正确';
-        return 
+        return ctx.body.msg = '手机号不正确';
     }
     const code = util.format('%d0000', Math.floor(Math.random() * 9999)).substr(0, 4);
     console.log(code)
@@ -23,9 +21,7 @@ SmsCtrl.send = async (ctx) => {
         };
         const subUser = await Subscribe.findOne(options);
         if (Object.keys(subUser).length) {
-            ctx.body.code = -3;
-            ctx.body.msg = '该手机号已经预约';
-            return 
+            return ctx.body.msg = '该手机号已经预约';
         }
         const user = await SmsCode.findOne(options);
         if (!Object.keys(user).length) {
@@ -46,7 +42,7 @@ SmsCtrl.send = async (ctx) => {
                 }
             })
         }
-        // await sms.send(mobile, 'SMS_133001437', `{code: '${code}'}`);
+        await sms.send(mobile, 'SMS_133001437', `{code: '${code}'}`);
         ctx.body.code = 1;
         ctx.body.msg = '发送成功';
     } catch (err) {
@@ -58,36 +54,31 @@ SmsCtrl.send = async (ctx) => {
 SmsCtrl.subscribe = async (ctx) => {
     const { mobile, code, type } = ctx.query;
     if (!isMobile(mobile)) {
-        ctx.body.code = -2;
-        ctx.body.msg = '手机号不正确';
-        return 
+        return ctx.body.msg = '手机号不正确';
     }
     if (type != 1 && type != 2) {
-        ctx.body.code = -3;
-        ctx.body.msg = '类型有误';
-        return 
+        return ctx.body.msg = '类型有误';
     }
     try {
-        const user = await SmsCode.findOne({
+        const options = {
             where: {
                 mobile: mobile
             }
-        });
+        };
+        const subUser = await Subscribe.findOne(options);
+        if (Object.keys(subUser).length) {
+            return ctx.body.msg = '该手机号已经预约';
+        }
+        const user = await SmsCode.findOne(options);
         if (!Object.keys(user).length) {
-            ctx.body.code = -4;
-            ctx.body.msg = '请先获取验证码';
-            return 
+            return ctx.body.msg = '请先获取验证码';
         } 
         const time = Math.round(new Date().getTime() / 1000) - user.time;
         if (time > 60) {
-            ctx.body.code = -5;
-            ctx.body.msg = '超过有效时间';
-            return 
+            return ctx.body.msg = '超过有效时间';
         }
         if (code != user.code) {
-            ctx.body.code = -6;
-            ctx.body.msg = '验证码无效';
-            return 
+            return ctx.body.msg = '验证码无效';
         }
         await Subscribe.save({
             mobile: mobile,
