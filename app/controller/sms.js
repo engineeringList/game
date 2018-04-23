@@ -46,7 +46,7 @@ SmsCtrl.send = async (ctx) => {
                 }
             })
         }
-        // await sms.send(mobile, 'SMS_133001437', `{code: '${code}'}`);
+        await sms.send(mobile, 'SMS_133001437', `{code: '${code}'}`);
         ctx.body.code = 1;
         ctx.body.msg = '发送成功';
     } catch (err) {
