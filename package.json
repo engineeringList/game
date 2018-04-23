@@ -21,6 +21,7 @@
     "dxl-mysql": "^1.1.0",
     "ejs": "^2.5.9",
     "koa": "^2.5.0",
+    "koa-compress": "^3.0.0",
     "koa-router": "^7.4.0",
     "koa-views": "^6.1.4"
   }
