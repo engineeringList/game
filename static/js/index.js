@@ -84,80 +84,57 @@
 		}, stime);  
     }
 
-    function dingshiqi(obj){
-		var pro = {
-			target : "",   //目标DOM元素 非JQ元素
-			timeSum : 60,  //倒计时的起始事件
-			text: "重新发送", //倒计时读秒完成后的文案
-            clickFun : "",//当前DOM 元素点击时的 执行方法
-            afterFun : "" //定时器执行完成后的方法
-		};
-
-        var  timerTask ={
-            // 倒计时开始执行 的方法
-            timerStart : function (){
-                flag = false;
-                var timer = setInterval(function (){
-                    step = step - 1;
-                    _target.text(step + "秒");
-
-                    if(step <= 0){
-                        clearInterval(timer);
-                        _target.text(pro.text);
-                        flag = true;
-                        step = pro.timeSum;
-
-                        $(pro.target).one("click" ,clickDone);
-
-                        $.isFunction (pro.afterFun) && pro.afterFun();
-                    }
-                },1000);
-            },
-            init : function (){
-                $(pro.target).one("click" ,clickDone);
-            }
-        }
-
-		$.extend(pro , obj);
-
-		var flag = true ; // 节流阀
-		var step = pro.timeSum;
-		var _target = $(pro.target);
-
-		$(pro.target).one("click" ,clickDone);
-
-        function clickDone(){
-            if(flag) {
-                pro.clickFun(timerTask);
-            }
-        }
-	}
-
     $.dingshiqi({
         target : ".verificationCode",
         clickFun: function (timerTask){
             var _phone = $(".phone").val();
-            if (!_phone || !$(".phone_ipt").val().isPhone()){
+            if (!_phone || !$(".phone").val().isPhone()){
+                timerTask.init();
                 return $.alert("请输入正确的手机号");
             }
 
             $.get("/api/sendSms?mobile=" + _phone + "&callback=?", function (data){
                 console.log(data);
                 //倒计时开始
-                if( d.code != 1){
+                if( data.code != 1){
                     timerTask.init();
-                    $.alert(d.msg);
-                    yanzhengma();
+                    $.alert(data.msg);
                 }	
-                if( d.code == 1){
-                    $('.dongtai_ipt').val('');
+                if( data.code == 1){
+                    $('.verificationCode').addClass("prohibited");
                     timerTask.timerStart();
                 }
             })
         },
         afterFun: function (){
-            yanzhengma();
-            
+            $('.verificationCode').removeClass("prohibited");
         }
     });
+
+    var falg = false; 
+    $(".sumbitBtn").on("click" , function (){
+        if (falg){
+            return;
+        }
+
+        var _phone = $(".phone").val();
+        var _code = $(".code").val();
+        var _type = $(".selePhone").find(".active").data("phonetype");
+        if (!_phone || !$(".phone").val().isPhone()){
+            return $.alert("请输入正确的手机号");
+        }
+        falg = true;
+        $(this).addClass("active");
+
+        $.get("/api/subscribe?mobile="+ _phone + "&code=" + _code + "&type="+ _type, function (data){
+            $.alert(data.msg);
+            if(data.code == 1){
+                $('.moduleTan').hide();
+                $.backgroundHide();
+
+            }
+            $(".sumbitBtn").removeClass("active");
+            falg = false;
+        })
+    })
 })

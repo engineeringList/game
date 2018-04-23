@@ -154,6 +154,54 @@ $.extend({
 		}
 		$(window).off("resize.bd");
 		$(window).off("scroll.bd");
+	},
+	"dingshiqi" : function (obj){
+		var pro = {
+			target : "",   //目标DOM元素 非JQ元素
+			timeSum : 5,  //倒计时的起始事件
+			text: "重新发送", //倒计时读秒完成后的文案
+            clickFun : "",//当前DOM 元素点击时的 执行方法
+            afterFun : "" //定时器执行完成后的方法
+		};
+
+        var  timerTask ={
+            // 倒计时开始执行 的方法
+            timerStart : function (){
+                flag = false;
+                var timer = setInterval(function (){
+                    step = step - 1;
+                    _target.text(step + "秒");
+
+                    if(step <= 0){
+                        clearInterval(timer);
+                        _target.text(pro.text);
+                        flag = true;
+                        step = pro.timeSum;
+
+                        $(pro.target).one("click" ,clickDone);
+
+                        $.isFunction (pro.afterFun) && pro.afterFun();
+                    }
+                },1000);
+            },
+            init : function (){
+                $(pro.target).one("click" ,clickDone);
+            }
+        }
+
+		$.extend(pro , obj);
+
+		var flag = true ; // 节流阀
+		var step = pro.timeSum;
+		var _target = $(pro.target);
+
+		$(pro.target).one("click" ,clickDone);
+
+        function clickDone(){
+            if(flag) {
+                pro.clickFun(timerTask);
+            }
+        }
 	}
 });
 $.fn.extend({
