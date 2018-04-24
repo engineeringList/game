@@ -652,7 +652,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .share .shareWeixin {
-    width: 2646px;
+    width: 264px;
     height: 208px;
     background: url("../images/ad3_1.png") center center no-repeat;
     position: absolute;
@@ -662,7 +662,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .share .shareQQ {
-    width: 2646px;
+    width: 264px;
     height: 208px;
     background: url("../images/ad3_2.png") center center no-repeat;
     position: absolute;
@@ -672,7 +672,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .share .shareTieba {
-    width: 2646px;
+    width: 264px;
     height: 208px;
     background: url("../images/ad3_3.png") center center no-repeat;
     position: absolute;
@@ -681,7 +681,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     margin-left: 37px;
 }
 .share .shareWeibo {
-    width: 2646px;
+    width: 264px;
     height: 208px;
     background: url("../images/ad3_4.png") center center no-repeat;
     position: absolute;
