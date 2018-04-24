@@ -31,6 +31,10 @@ SmsCtrl.send = async (ctx) => {
                 time: Math.round(new Date().getTime() / 1000)
             });
         } else {
+            const time = Math.round(new Date().getTime() / 1000) - user.time;
+            if (time < 60) {
+                return ctx.body.msg = '验证码已经发送,一分钟之后再试';
+            }
             // 已存在
             await SmsCode.update({
                 where: {
