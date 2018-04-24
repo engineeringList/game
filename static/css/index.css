@@ -644,6 +644,59 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     overflow: hidden;
 }
 
+.share {
+    width: 1207px;
+    height: 208px;
+    margin: 231px auto 0;
+    position: relative;
+}
+
+.share .shareWeixin {
+    width: 2646px;
+    height: 208px;
+    background: url("../images/ad3_1.png") center center no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -609px;
+}
+
+.share .shareQQ {
+    width: 2646px;
+    height: 208px;
+    background: url("../images/ad3_2.png") center center no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -314px;
+}
+
+.share .shareTieba {
+    width: 2646px;
+    height: 208px;
+    background: url("../images/ad3_3.png") center center no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: 37px;
+}
+.share .shareWeibo {
+    width: 2646px;
+    height: 208px;
+    background: url("../images/ad3_4.png") center center no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: 332px;
+}
+
+.share .shareWeibo a {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
 /* 页脚 */
 footer {
     width: 1000px;
