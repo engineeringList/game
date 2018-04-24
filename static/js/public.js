@@ -158,7 +158,7 @@ $.extend({
 	"dingshiqi" : function (obj){
 		var pro = {
 			target : "",   //目标DOM元素 非JQ元素
-			timeSum : 5,  //倒计时的起始事件
+			timeSum : 60,  //倒计时的起始事件
 			text: "重新发送", //倒计时读秒完成后的文案
             clickFun : "",//当前DOM 元素点击时的 执行方法
             afterFun : "" //定时器执行完成后的方法
