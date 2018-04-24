@@ -50,7 +50,7 @@ SmsCtrl.send = async (ctx) => {
         ctx.body.code = 1;
         ctx.body.msg = '发送成功';
     } catch (err) {
-        console.log(err)
+        console.log(err);
         ctx.body.msg = '服务器异常';
     };
 }
@@ -94,7 +94,7 @@ SmsCtrl.subscribe = async (ctx) => {
         ctx.body.code = 1;
         ctx.body.msg = '预约成功';
     } catch (err) {
-        console.log(err)
+        console.log(err);
         ctx.body.msg = '服务器异常';
     };
 }

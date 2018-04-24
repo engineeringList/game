@@ -7,7 +7,12 @@ const SubscribeCtrl = {};
 SubscribeCtrl.wave = async (ctx) => {
     let abscissa = [];
     let values = [];
-    const data = await Subscribe.query('select date, count(date) as count from `sms_subscribe` group by date');
+    try {
+        const data = await Subscribe.query('select date, count(date) as count from `sms_subscribe` group by date');
+    } catch (err) {
+        console.log(err);
+        return ctx.body.msg = '服务器异常';
+    };
     for (let obj of data) {
         abscissa.push(obj.date);
         values.push(obj.count);
