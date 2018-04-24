@@ -87,7 +87,8 @@ SmsCtrl.subscribe = async (ctx) => {
         await Subscribe.save({
             mobile: mobile,
             type: type,
-            time: Math.round(new Date().getTime() / 1000)
+            time: Math.round(new Date().getTime() / 1000),
+            date: getDate()
         });
         await sms.send(mobile, 'SMS_133150100', `{code: '${code}'}`);
         ctx.body.code = 1;
@@ -104,3 +105,15 @@ const isMobile = (mobile) => {
     let reg = /^1[1-9]\d{9}$/;
     return mobile ? !!(mobile.toString().match(reg)) : false;
 };
+
+const getDate = () => {
+    const myDate = new Date();
+    const year = myDate.getFullYear(); 
+    const month = myDate.getMonth() + 1; 
+    const day = myDate.getDate(); 
+    function Appendzero(obj) {
+        if(obj < 10) return '0' + obj;  
+        else return obj; 
+    }
+    return `${year}${Appendzero(month)}${Appendzero(day)}`;
+}
