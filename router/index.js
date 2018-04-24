@@ -9,5 +9,6 @@ router.get('/', async ( ctx ) => {
 });
 
 require('./sms')(router);
+require('./subscribe')(router);
 
 module.exports = router;

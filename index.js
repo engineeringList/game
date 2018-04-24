@@ -1,13 +1,18 @@
 'use strict';
 
-const Koa = require('koa');
-const views = require('koa-views');
-const compress = require('koa-compress');
-const morgan = require('koa-morgan');
-const path = require('path');
 const fs = require('fs');
+const Koa = require('koa');
+const path = require('path');
+const cors = require('koa2-cors');
+const views = require('koa-views');
+const morgan = require('koa-morgan');
 const _static = require('koa-static');
+const compress = require('koa-compress');
+
 const app = new Koa();
+
+// 跨域
+app.use(cors());
 
 // 静态文件
 app.use(_static(

@@ -18,13 +18,14 @@
   "homepage": "https://github.com/dlyt/koa-init#readme",
   "dependencies": {
     "@alicloud/sms-sdk": "^1.0.9",
-    "dxl-mysql": "^1.1.0",
+    "dxl-mysql": "^1.1.1",
     "ejs": "^2.5.9",
     "koa": "^2.5.0",
     "koa-compress": "^3.0.0",
     "koa-morgan": "^1.0.1",
     "koa-router": "^7.4.0",
     "koa-static": "^4.0.2",
-    "koa-views": "^6.1.4"
+    "koa-views": "^6.1.4",
+    "koa2-cors": "^2.0.5"
   }
 }
