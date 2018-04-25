@@ -198,6 +198,10 @@ html {
     position: absolute;
     left: 0.46rem;
     top: 1.08rem;
+}
+#slideshow1 .bd {
+    width: 5.48rem;
+    height: 3.01rem;
     overflow: hidden;
 }
 
