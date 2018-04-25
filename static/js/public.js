@@ -82,6 +82,28 @@ $.extend({
 		h.fadeIn(300);
 		setTimeout(function(){h.fadeOut(300,function(){h.remove();})},2000);
 	},
+	//模拟原生alert提示  自动关闭
+	"mAlert":function(msg,callback){
+		if($("#mAlert").size() == 0){   //避免重复添加
+			var str = '<div id="mAlert"><div class="mAlertBox">' +
+						'<div class="alertContent"></div>' +
+					  '</div></div>';
+			$("body").append(str);
+		}
+		var myDialog = $("#mAlert");
+
+		myDialog.find(".alertContent").text(msg);
+		myDialog.layerFixedShow();
+
+		setTimeout(toCloseAlert,3000);  //自动关闭
+
+		function toCloseAlert(){//关闭弹出层
+			myDialog.fadeOut(800,function(){
+				myDialog.remove();
+			})
+			$.isFunction(callback) ? callback() : "";
+		}
+	},
 	//环境初始化
 	"mAppInit":function(opt){
 		var par = {
@@ -252,7 +274,22 @@ $.fn.extend({
 		}
 		_this.css({"left":def.left,"top":def.top,"right":def.right,"bottom":def.bottom});
 		return _this;
-	}
+	},
+	"touchClick":function(select,callback){   //移动端 点击事件
+		var se = (select != "" && !$.isFunction(select)) ? select : "";
+		var cb = $.isFunction(select) ? select : callback;
+		$(this).each(function(index, element) {
+			var tc = false;
+			$(this).on({
+				"touchstart":function(){tc = true;},
+				"touchmove":function(){tc = false;},
+				"touchend":function(event){
+					event.index = index;
+					tc ? $.isFunction(cb) ? cb.call(element, event) : "" : "";
+				}
+			},se);
+		});
+	},
 })
 
 function Regular(z){return (new RegExp(z).test(this));}
