@@ -385,10 +385,10 @@ footer div {
 }
 
 .moduleTan .moduleTanContent .verificationCode {
-    width: 0.95rem;
+    width: 0.9rem;
     height: 0.33rem;
     font-size: 0.14rem;
-    text-indent: 2em;
+    text-align: center;
     line-height: 0.33rem;
     background-color: #ccb56c;
     border-radius: 5px;
