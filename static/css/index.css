@@ -872,6 +872,44 @@ footer  .footer-content {
 }
 
 
+/* 预约成功弹层 */
+.moduleTanSecc {
+    width: 553px;
+    height: 258px;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/yuyue_secc.png") center center no-repeat;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -129px;
+    margin-left: -277px;
+    z-index: 1000;
+    display: none;
+}
+
+.moduleTanSecc  .closeBtn2 {
+    width: 42px;
+    height: 41px;
+    background: url("../images/colse.png") center center no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -47px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.moduleTanSecc  .jihuoma {
+    width: 100%;
+    color: #ccb56c;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    margin: 172px auto 0;
+}
+
+.moduleTanSecc  .closeBtn2:hover {
+    transform: rotate(180deg);
+}
+
 
 /* 视频弹层 */
 .video-container {

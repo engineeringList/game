@@ -24,6 +24,13 @@
         } , 200)
     })
 
+    $(".closeBtn2").on("click" ,function (){
+        $(".moduleTanSecc").hide();
+        setTimeout(function (){
+            $.backgroundHide();
+        } , 200)
+    })
+
     // 手机ios 和安卓 选择
     $(".selePhone li").on("click" ,function (){
         $(this).addClass("active").siblings().removeClass("active");
@@ -131,10 +138,13 @@
             $.alert(data.msg);
             if(data.code == 1){
                 $('.moduleTan').hide();
-                $.backgroundHide();
                 $(".phone").val("");
                 $(".code").val("");
                 $(".verificationCode").text("获取验证码");
+
+                
+                $(".moduleTanSecc").show();
+                // $.backgroundHide();
             }
             $(".sumbitBtn").removeClass("active");
             falg = false;
