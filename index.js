@@ -16,7 +16,7 @@ app.use(cors());
 
 // 静态文件
 app.use(_static(
-  path.join( __dirname,  './static')
+    path.join( __dirname,  './static')
 ));
 
 // log
@@ -28,21 +28,36 @@ app.use(compress(options));
 
 // 加载模板引擎
 app.use(views(path.join(__dirname, './view'), {
-  extension: 'ejs'
+    extension: 'ejs'
 }))
 
 app.use(async (ctx, next) => {
-  ctx.body = {
-    code: -1,
-    msg: '',
-    data: '',
-  };
-  await next();
+    ctx.body = {
+        code: -1,
+        msg: '',
+        data: '',
+    };
+    await next();
 });
+
+// 适配移动端
+app.use(async (ctx, next) => {
+    const _ctx = Object.assign({}, ctx);
+    const deviceAgent = ctx.request.header['user-agent'].toLowerCase();
+    const agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
+    ctx.render = async (view, options) => {
+      if (agentID) {
+          view = view + '-m';
+      } else {
+          view = view + '-p';
+      }
+      return _ctx.render(view, options)
+    }
+    await next();
+})
 
 const router = require('./router');
 app.use(router.routes());
-
 
 app.listen(3000, () => {
   console.log('starting at port 3000');
