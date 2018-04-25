@@ -37,9 +37,10 @@
                 '</div>';
 
     $(".ad1Video").click(function() {
-        $.backgroundShow();
-        $("#videoBox").html(html);
-        $("#videoContainer").show();
+        // $.backgroundShow();
+        // $("#videoBox").html(html);
+        // $("#videoContainer").show();
+        $.alert("视频制作中，敬请期待");
     });
      $("#videoCloseBtn").click(function() {
         $("#videoBox").html("");
