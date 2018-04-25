@@ -190,6 +190,7 @@ html {
     background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_m_ad3_bg.png") center center no-repeat;
     background-size: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .ad3 #slideshow1 {
