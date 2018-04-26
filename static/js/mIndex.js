@@ -121,7 +121,7 @@ $(function (){
                 $(".verificationCode").text("获取验证码");
 
 
-                $(".jihuoma").text(data.data.num);
+                $(".jihuomaInfo").text(data.data.num);
                 $(".moduleTanSecc").show();
                 // $.backgroundHide();
             }else {

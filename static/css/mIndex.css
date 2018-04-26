@@ -379,8 +379,8 @@ html {
     background: url(../images/zhiying.png) center center no-repeat;
     background-size: 100%;
     position: fixed;
-    top: 0.8rem;
-    right: 0.5rem;
+    top: 0;
+    right: 0;
     z-index: 1010;
     display: none;
 }
@@ -435,7 +435,7 @@ footer div {
 }
 
 .moduleTan .moduleTanContent {
-    width: 2.65rem;
+    width: 4rem;
     height: auto;
     margin: 0.8rem auto 0;
 }
@@ -445,7 +445,7 @@ footer div {
 }
 
 .moduleTan .moduleTanContent .selePhone li {
-    width: 1.32rem;
+    width: 2rem;
     height: 0.41rem;
     float: left;
     color: #ffffff;
@@ -476,7 +476,7 @@ footer div {
 }
 
 .moduleTan .moduleTanContent  .phone {
-    width: 2.65rem;
+    width: 4rem;
     height: 0.33rem;
     font-size: 0.14rem;
     text-indent: 2em;
@@ -492,7 +492,7 @@ footer div {
     margin-bottom: 0.3rem;
 }
 .moduleTan .moduleTanContent .code {
-    width: 1.7rem;
+    width: 2.6rem;
     height: 0.33rem;
     font-size: 0.14rem;
     text-indent: 2em;
@@ -504,7 +504,7 @@ footer div {
 }
 
 .moduleTan .moduleTanContent .verificationCode {
-    width: 0.9rem;
+    width: 1.2rem;
     height: 0.33rem;
     font-size: 0.14rem;
     text-align: center;

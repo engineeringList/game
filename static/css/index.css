@@ -754,6 +754,21 @@ footer  .footer-content {
     top: 35px;
 }
 
+/* 视频提示 */
+.videoTip {
+    width: 360px;
+    height: 67px;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/videotip2.png") center center no-repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -33px;
+    margin-left: -180px;
+    z-index: 1000;
+    display: none;
+}
+
 /* 邀请弹窗 */
 .yanqingTan {
     width: 750px;

@@ -63,10 +63,11 @@
                 '</div>';
 
     $(".ad1Video").click(function() {
-        // $.backgroundShow();
-        // $("#videoBox").html(html);
-        // $("#videoContainer").show();
-        $.alert("视频制作中，敬请期待");
+        $(".videoTip").show();
+        setTimeout(function (){
+            $(".videoTip").hide();
+        },2000)
+        // $.alert("视频制作中，敬请期待");
     });
      $("#videoCloseBtn").click(function() {
         $("#videoBox").html("");
