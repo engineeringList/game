@@ -12,6 +12,12 @@ $(function (){
         autoPage: true //自动分页
     });
 
+    $.get("/api/subscribe/count?callback=?" ,function (data){
+        if(data.code == 1) {
+            $(".ad1YuyueNumColor2").text(data.data.count)
+        }
+    })
+
 
     $(".yuyue").touchClick(function (){
         $.backgroundShow();
@@ -28,6 +34,7 @@ $(function (){
             $(".verificationCode").text("获取验证码");
         } , 200)
         $(".moduleTan").hide();
+        $(".moduleTanSecc").hide();
     })
 
     // 手机ios 和安卓 选择
@@ -97,13 +104,19 @@ $(function (){
         $(this).addClass("active");
 
         $.get("/api/subscribe?mobile="+ _phone + "&code=" + _code + "&type="+ _type, function (data){
-            $.alert(data.msg);
             if(data.code == 1){
                 $('.moduleTan').hide();
-                $.backgroundHide();
+                
                 $(".phone").val("");
                 $(".code").val("");
                 $(".verificationCode").text("获取验证码");
+
+
+                $(".jihuoma").text(data.data.num);
+                $(".moduleTanSecc").show();
+                // $.backgroundHide();
+            }else {
+                $.alert(data.msg);
             }
             $(".sumbitBtn").removeClass("active");
             falg = false;

@@ -434,18 +434,22 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 
 .main .ad1  .ad1YY .ad1YuyueBtnNum {
     position: absolute;
-    top: 0;
-    right: -241px;
-    width: 221px;
+    width: 254px;
     height: 56px;
     color: #3d4684;
     font-size: 16px;
-    /*text-align: center;*/
-    text-indent: 3.5em;
+    text-align: center;
     line-height: 56px;
-    background: url(../images/text.png) center center  no-repeat;
     background-size: 100%;
     letter-spacing: 4px;
+}
+
+.ad1YuyueNumColor1 {
+    color: #bea968;
+}
+
+.ad1YuyueNumColor2 {
+    color: #51598e;
 }
 
 
@@ -481,52 +485,35 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn4,
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn5,
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn6 {
-    width: 110px;
-    height: 31px;
+    width: 31px;
+    height: 76px;
     position: absolute;
-    cursor: pointer;
+    background: url("../images/dacheng_p.png") center center no-repeat;
 }
 
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn1 {
-    background: url("../images/ad2_prize_lingqu.png") center center no-repeat;
-    background-size: auto 100%;
-    top: 211px;
-    left: 109px;
+
 }
 
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn2 {
-    background: url("../images/ad2_prize_wei.png") center center no-repeat;
-    background-size: auto 100%;
-    top: 211px;
-    left: 488px;
+    top: 19px;
+    left: 584px;
 }
 
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn3 {
-    background: url("../images/ad2_prize_wei.png") center center no-repeat;
-    background-size: auto 100%;
-    top: 211px;
-    left: 872px;
+
 }
 
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn4 {
-    background: url("../images/ad2_prize_lingqu.png") center center no-repeat;
-    background-size: auto 100%;
-    top: 497px;
-    left: 109px;
+
 }
 
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn5 {
-    background: url("../images/ad2_prize_wei.png") center center no-repeat;
-    background-size: auto 100%;
-    top: 497px;
-    left: 488px;
+
 }
 
 .ad2 .ad2YuYueFuLi .ad2Prize  .ad2Btn6 {
-    background: url("../images/ad2_prize_wei.png") center center no-repeat;
-    background-size: auto 100%;
-    top: 497px;
-    left: 872px;
+
 }
 
 
@@ -685,7 +672,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .share {
     width: 1207px;
     height: 208px;
-    margin: 388px auto 0;
+    margin: 384px auto 0;
     position: relative;
 }
 
@@ -738,10 +725,11 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 /* 页脚 */
 footer {
     width: 1000px;
-    height: 152px; 
-    background-color: #fff;
-    margin: 0 auto;
-    position: relative;
+    height: 152px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -500px;
 }
 
 footer  .logo {

@@ -28,7 +28,7 @@
 
     $.get("/api/subscribe/count?callback=?" ,function (data){
         if(data.code == 1) {
-            $(".ad1YuyueBtnNum").text(data.data.count)
+            $(".ad1YuyueNumColor2").text(data.data.count)
         }
     })
 
