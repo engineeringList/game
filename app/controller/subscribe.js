@@ -60,4 +60,15 @@ SubscribeCtrl.list = async (ctx) => {
     };
 }
 
+SubscribeCtrl.count = async (ctx) => {
+    try {
+        const sub = await Subscribe.count({});
+        ctx.body.code = 1;
+        ctx.body.data = sub[0];
+    } catch (err) {
+        console.log(err);
+        return ctx.body.msg = '服务器异常';
+    };
+}
+
 module.exports = SubscribeCtrl;

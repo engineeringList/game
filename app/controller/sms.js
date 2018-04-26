@@ -1,7 +1,7 @@
 'use strict';
 
 const util = require('util');
-const { SmsCode, Subscribe } = require('../models');
+const { SmsCode, Subscribe, Member } = require('../models');
 const sms = require('../lib/sms');
 
 const SmsCtrl = {};
@@ -84,14 +84,20 @@ SmsCtrl.subscribe = async (ctx) => {
         if (code != user.code) {
             return ctx.body.msg = '验证码无效';
         }
-        await Subscribe.save({
+        const sub = await Subscribe.save({
             mobile: mobile,
             type: type,
             time: Math.round(new Date().getTime() / 1000),
             date: getDate()
         });
-        await sms.send(mobile, 'SMS_133150100', `{code: '${code}'}`);
+        const member = await Member.findOne({
+            where: {
+                id: sub.insertId
+            }
+        })
+        await sms.send(mobile, 'SMS_133150100', `{code: '${member.num}'}`);
         ctx.body.code = 1;
+        ctx.body.data = member;
         ctx.body.msg = '预约成功';
     } catch (err) {
         console.log(err);
@@ -115,5 +121,5 @@ const getDate = () => {
         if(obj < 10) return '0' + obj;  
         else return obj; 
     }
-    return `${year}${Appendzero(month)}${Appendzero(day)}`;
+    return `${year}-${Appendzero(month)}-${Appendzero(day)}`;
 }

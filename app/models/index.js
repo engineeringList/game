@@ -7,4 +7,5 @@ const gameDb = createPool(mysql);
 module.exports = {
     SmsCode: new Model(gameDb, 'sms_code'),
     Subscribe: new Model(gameDb, 'sms_subscribe'),
+    Member: new Model(gameDb, 'member'),
 }
