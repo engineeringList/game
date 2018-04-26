@@ -63,6 +63,7 @@ SubscribeCtrl.list = async (ctx) => {
 SubscribeCtrl.count = async (ctx) => {
     try {
         const sub = await Subscribe.count({});
+        sub[0].count = sub[0].count + 52361;
         ctx.body.code = 1;
         ctx.body.data = sub[0];
     } catch (err) {
