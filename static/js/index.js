@@ -13,6 +13,25 @@
         },200)
     });
 
+
+    $(".ad1YaoqingBtn").on("click" ,function (){
+        $.backgroundShow();
+        $(".yanqingTan").show();
+    });
+
+    $(".yanqingTanClose").on("click",function (){
+        $(this).parent().hide();
+        setTimeout(function (){
+            $.backgroundHide();
+        },200);
+    })
+
+    $.get("/api/subscribe/count?callback=?" ,function (data){
+        if(data.code == 1) {
+            $(".ad1YuyueBtnNum").text(data.data.count)
+        }
+    })
+
     // 立即预约弹层 交互
     $(".moduleTan  .closeBtn").on("click" ,function (){
         $(".moduleTan").hide();
@@ -135,7 +154,7 @@
         $(this).addClass("active");
 
         $.get("/api/subscribe?mobile="+ _phone + "&code=" + _code + "&type="+ _type, function (data){
-            $.alert(data.msg);
+            
             if(data.code == 1){
                 $('.moduleTan').hide();
                 $(".phone").val("");
@@ -143,9 +162,14 @@
                 $(".verificationCode").text("获取验证码");
 
                 
+
+                $(".jihuoma").text(data.data.num);
                 $(".moduleTanSecc").show();
                 // $.backgroundHide();
+            }else {
+                $.alert(data.msg);
             }
+            
             $(".sumbitBtn").removeClass("active");
             falg = false;
         })
