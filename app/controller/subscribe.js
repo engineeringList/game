@@ -64,7 +64,7 @@ SubscribeCtrl.count = async (ctx) => {
     try {
         const sub = await Subscribe.count({});
         ctx.body.code = 1;
-        ctx.body.data = sub[0];
+        ctx.body.data = sub[0] + 52361;
     } catch (err) {
         console.log(err);
         return ctx.body.msg = '服务器异常';
