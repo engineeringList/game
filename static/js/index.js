@@ -24,6 +24,13 @@
         } , 200)
     })
 
+    $(".closeBtn2").on("click" ,function (){
+        $(".moduleTanSecc").hide();
+        setTimeout(function (){
+            $.backgroundHide();
+        } , 200)
+    })
+
     // 手机ios 和安卓 选择
     $(".selePhone li").on("click" ,function (){
         $(this).addClass("active").siblings().removeClass("active");
@@ -37,9 +44,10 @@
                 '</div>';
 
     $(".ad1Video").click(function() {
-        $.backgroundShow();
-        $("#videoBox").html(html);
-        $("#videoContainer").show();
+        // $.backgroundShow();
+        // $("#videoBox").html(html);
+        // $("#videoContainer").show();
+        $.alert("视频制作中，敬请期待");
     });
      $("#videoCloseBtn").click(function() {
         $("#videoBox").html("");
@@ -130,10 +138,13 @@
             $.alert(data.msg);
             if(data.code == 1){
                 $('.moduleTan').hide();
-                $.backgroundHide();
                 $(".phone").val("");
                 $(".code").val("");
                 $(".verificationCode").text("获取验证码");
+
+                
+                $(".moduleTanSecc").show();
+                // $.backgroundHide();
             }
             $(".sumbitBtn").removeClass("active");
             falg = false;

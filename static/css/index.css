@@ -35,7 +35,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     height: 918px;
     min-width: 1400px;
     max-width: 1920px;
-    background: url("../images/ad_1.png") center top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_ad_1.png") center top no-repeat;
     background-size: auto 100%;
     position: relative;
     overflow: hidden;
@@ -46,7 +46,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .cloud1 {
     width: 50px;
     height: 40px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c2_0baa8cf.png) no-repeat;
+    background: url(../images/c2_0baa8cf.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     right: 0;
@@ -56,7 +56,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .cloud2 {
     width: 50px;
     height: 40px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c5_e467480.png) no-repeat;
+    background: url(../images/c5_e467480.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 591px;
@@ -67,7 +67,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud3 {
     width: 40px;
     height: 35px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c3_111ca56.png) no-repeat;
+    background: url(../images/c3_111ca56.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 500px;
@@ -78,7 +78,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud4 {
     width: 50px;
     height: 31px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c7_162d2e7.png) no-repeat;
+    background: url(../images/c7_162d2e7.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 1600px;
@@ -90,7 +90,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud5 {
     width: 50px;
     height: 31px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c4_6338703.png) no-repeat;
+    background: url(../images/c4_6338703.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 400px;
@@ -102,7 +102,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud6 {
     width: 50px;
     height: 31px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c6_bb853c8.png) no-repeat;
+    background: url(../images/c6_bb853c8.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 800px;
@@ -114,7 +114,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud7 {
     width: 50px;
     height: 31px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c6_bb853c8.png) no-repeat;
+    background: url(../images/c6_bb853c8.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 1000px;
@@ -126,7 +126,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud8 {
     width: 50px;
     height: 31px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c6_bb853c8.png) no-repeat;
+    background: url(../images/c6_bb853c8.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 1000px;
@@ -138,7 +138,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
  .cloud9 {
     width: 50px;
     height: 31px;
-    background: url(https://sg.res.netease.com/pc/fab/20180417111723/img/c6_bb853c8.png) no-repeat;
+    background: url(../images/c6_bb853c8.png) no-repeat;
     background-size: 100% auto;
     position: absolute;
     left: 1000px;
@@ -434,26 +434,26 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 
 .ad2 {
     width: 100%;
-    height: 2626px;
+    height: 2674px;
     min-width: 1400px;
     max-width: 1920px;
-    background: url("../images/ad2.png") center top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_ad2.png") center top no-repeat;
     background-size: auto 100%;
     position: relative;
 }
 
 .ad2 .ad2YuYueFuLi {
-    width: 1120px;
-    height: 584px;
+    width: 1026px;
+    height: 546px;
     position: absolute;
     top: 212px;
     left: 50%;
-    margin-left: -560px;
+    margin-left: -513px;
 }
 .ad2 .ad2YuYueFuLi .ad2Prize {
     width: 100%;
     height: 100%;
-    background: url("../images/ad2_prize_all.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_ad2_prize_all.png") center center no-repeat;
     background-size: auto 100%;
     position: relative;
 }
@@ -578,7 +578,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item1 .b-img {
-    background: url("../images/1.jpg") left top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_1.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -588,7 +588,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item2 .b-img {
-    background: url("../images/2.jpg") left top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_2.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -598,7 +598,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item3 .b-img {
-    background: url("../images/3.jpg") left top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_3.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -608,17 +608,17 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item4 .b-img {
-    background: url("../images/4.jpg") left top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_4.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item5 .s-img {
-    height: 0;
-    width: 0;
+    background: url("../images/ad2_ul1_li5.png") left top no-repeat;
+    background-size: 100% auto
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item5 .b-img {
-    background: url("../images/5.jpg") left top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_5.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -734,7 +734,7 @@ footer  .footer-content {
 .moduleTan {
     width: 751px;
     height: 460px;
-    background: url("../images/yuYueTan.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_yuYueTan.png") center center no-repeat;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -872,6 +872,44 @@ footer  .footer-content {
 }
 
 
+/* 预约成功弹层 */
+.moduleTanSecc {
+    width: 553px;
+    height: 258px;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/yuyue_secc.png") center center no-repeat;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -129px;
+    margin-left: -277px;
+    z-index: 1000;
+    display: none;
+}
+
+.moduleTanSecc  .closeBtn2 {
+    width: 42px;
+    height: 41px;
+    background: url("../images/colse.png") center center no-repeat;
+    position: absolute;
+    top: 0px;
+    right: -47px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+.moduleTanSecc  .jihuoma {
+    width: 100%;
+    color: #ccb56c;
+    font-size: 18px;
+    line-height: 18px;
+    text-align: center;
+    margin: 172px auto 0;
+}
+
+.moduleTanSecc  .closeBtn2:hover {
+    transform: rotate(180deg);
+}
+
 
 /* 视频弹层 */
 .video-container {
@@ -900,7 +938,7 @@ footer  .footer-content {
     display: block;
     width: 44px;
     height: 44px;
-    background: url(https://myj.res.netease.com/pc/gw/20171214124715/img/close_57026c8.png) center center no-repeat;
+    background: url(../images/close_57026c8.png) center center no-repeat;
     background-size: 100% auto;
     -webkit-transition: .5s ease;
     -moz-transition: .5s ease;

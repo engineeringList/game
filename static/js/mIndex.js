@@ -3,12 +3,6 @@ $(function (){
 		$("html").css("fontSize",$(window).width()/6.4);
     }).resize();
     
-    $.mAlert("aaaaaaaaaaa")
-
-    $(".yuyue").touchClick(function (){
-        console.log("22222222")
-    })
-
     $.touchSlider({
         slideCell: "#slideshow1",
         titCell: "#slideshow1 .hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
@@ -49,9 +43,10 @@ $(function (){
                 '</div>';
 
     $(".ad1Video").touchClick(function() {
-        $.backgroundShow();
-        $("#videoBox").html(html);
-        $("#videoContainer").show();
+        $.mAlert("视频制作中，敬请期待");
+        // $.backgroundShow();
+        // $("#videoBox").html(html);
+        // $("#videoContainer").show();
     });
      $("#videoCloseBtn").touchClick(function() {
         $("#videoBox").html("");
