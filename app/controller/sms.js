@@ -121,5 +121,5 @@ const getDate = () => {
         if(obj < 10) return '0' + obj;  
         else return obj; 
     }
-    return `${year}${Appendzero(month)}${Appendzero(day)}`;
+    return `${year}-${Appendzero(month)}-${Appendzero(day)}`;
 }
