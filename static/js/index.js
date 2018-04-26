@@ -154,7 +154,7 @@
         $(this).addClass("active");
 
         $.get("/api/subscribe?mobile="+ _phone + "&code=" + _code + "&type="+ _type, function (data){
-            $.alert(data.msg);
+            
             if(data.code == 1){
                 $('.moduleTan').hide();
                 $(".phone").val("");
@@ -166,7 +166,10 @@
                 $(".jihuoma").text(data.data.num);
                 $(".moduleTanSecc").show();
                 // $.backgroundHide();
+            }else {
+                $.alert(data.msg);
             }
+            
             $(".sumbitBtn").removeClass("active");
             falg = false;
         })
