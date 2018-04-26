@@ -435,9 +435,9 @@ footer div {
 }
 
 .moduleTan .moduleTanContent {
-    width: 4rem;
+    width: 3.6rem;
     height: auto;
-    margin: 0.8rem auto 0;
+    margin: 0.7rem auto 0;
 }
 
 .moduleTan .moduleTanContent .selePhone {
@@ -445,7 +445,7 @@ footer div {
 }
 
 .moduleTan .moduleTanContent .selePhone li {
-    width: 2rem;
+    width: 1.8rem;
     height: 0.41rem;
     float: left;
     color: #ffffff;
@@ -476,11 +476,11 @@ footer div {
 }
 
 .moduleTan .moduleTanContent  .phone {
-    width: 4rem;
-    height: 0.33rem;
+    width: 3.6rem;
+    height: 0.4rem;
     font-size: 0.14rem;
     text-indent: 2em;
-    line-height: 0.33rem;
+    line-height: 0.4rem;
     border: none;
     outline: none;
     background-color: #fff;
@@ -489,14 +489,14 @@ footer div {
 }
 
 .moduleTan .moduleTanContent .verification {
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 .moduleTan .moduleTanContent .code {
-    width: 2.6rem;
-    height: 0.33rem;
+    width: 2.2rem;
+    height: 0.4rem;
     font-size: 0.14rem;
     text-indent: 2em;
-    line-height: 0.33rem;
+    line-height: 0.4rem;
     border: none;
     outline: none;
     background-color: #fff;
@@ -505,10 +505,10 @@ footer div {
 
 .moduleTan .moduleTanContent .verificationCode {
     width: 1.2rem;
-    height: 0.33rem;
+    height: 0.4rem;
     font-size: 0.14rem;
     text-align: center;
-    line-height: 0.33rem;
+    line-height: 0.4rem;
     background-color: #ccb56c;
     border-radius: 5px;
 }
