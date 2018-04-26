@@ -18,6 +18,13 @@ $(function (){
         }
     })
 
+    $(".ad3Yaoqing ,.ad1Yaqing").touchClick(function (){
+        $.backgroundShow();
+        setTimeout(function (){
+            $(".sharePengyou").show();
+        },200)
+        
+    })
 
     $(".yuyue").touchClick(function (){
         $.backgroundShow();
@@ -35,6 +42,8 @@ $(function (){
         } , 200)
         $(".moduleTan").hide();
         $(".moduleTanSecc").hide();
+
+        $(".sharePengyou").hide();
     })
 
     // 手机ios 和安卓 选择
