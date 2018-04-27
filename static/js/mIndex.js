@@ -25,13 +25,13 @@ $(function (){
 
                 // 朋友圈
                 var wxData1 = {
-                    "title": "《火王：破晓之战》官方正版手游 预热开启", // 分享标题
+                    "title": "《火王：破晓之战》正版手游 预约火热开启", // 分享标题
                     "link": location.href.split('#')[0], // 分享链接
                     "imgUrl": 'http://www.hw.mangofun.cn/images/ad_1_logo.png' // 分享图标,
                 };
                 // 好友
                 var wxData2 = {
-                    "title": "《火王：破晓之战》官方正版手游 预热开启", // 分享标题
+                    "title": "《《火王：破晓之战》正版手游 预约火热开启", // 分享标题
                     "desc": "《火王：破晓之战》邀你共赏全新幻想国风世界",
                     "link": location.href.split('#')[0], // 分享链接
                     "imgUrl": 'http://www.hw.mangofun.cn/images/ad_1_logo.png' // 分享图标,
