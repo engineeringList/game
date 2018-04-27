@@ -577,7 +577,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item1 .s-img {
-    background: url("../images/ad2_ul1_li1_1.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li1.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -587,7 +587,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item2 .s-img {
-    background: url("../images/ad2_ul1_li1_2.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li2.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -597,7 +597,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item3 .s-img {
-    background: url("../images/ad2_ul1_li1_3.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li3.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -607,7 +607,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item4 .s-img {
-    background: url("../images/ad2_ul1_li1_4.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li4.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -617,7 +617,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item5 .s-img {
-    background: url("../images/ad2_ul1_li1_5.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li5.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
@@ -632,26 +632,26 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item1.active .s-img {
-    background: url("../images/ad2_ul1_li1.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li1_1.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item2.active .s-img {
-    background: url("../images/ad2_ul1_li2.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li1_2.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item3.active .s-img {
-    background: url("../images/ad2_ul1_li3.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li1_3.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
 .ad2  .ad2Features .accordion-container .accordion-item.item4.active .s-img {
-    background: url("../images/ad2_ul1_li4.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li1_4.jpg") left top no-repeat;
     background-size: 100% auto
 }
 .ad2  .ad2Features .accordion-container .accordion-item.item5.active .s-img {
-    background: url("../images/ad2_ul1_li5.jpg") left top no-repeat;
+    background: url("../images/ad2_ul1_li1_5.jpg") left top no-repeat;
     background-size: 100% auto
 }
 
