@@ -6,7 +6,7 @@ $(function (){
     //微信分享
     weixinFenxiang()
     function weixinFenxiang(){
-        $.getJSON('http://www.hw.mangofun.cn/' + 'wx?act=signature&url='+encodeURIComponent(window.location.href)+'&callback=?',function (data){
+        $.getJSON('http://www.hw.mangofun.cn/' + 'wx?url='+encodeURIComponent(window.location.href)+'&callback=?',function (data){
             data = $.extend({}, data ,{"debug" : false});
             wx.config(data);
             wx.ready(function () {
@@ -26,14 +26,14 @@ $(function (){
                 var wxData1 = {
                     "title": "《火王：破晓之战》官方正版手游 预热开启", // 分享标题
                     "link": location.href.split('#')[0], // 分享链接
-                    "imgUrl": dxlHttp.e + 'M-Marketing/201710Now/images/weixin.jpg'// 分享图标,
+                    "imgUrl": 'http://www.hw.mangofun.cn/images/ad_1_logo.png' // 分享图标,
                 };
                 // 好友
                 var wxData2 = {
-                    "title": "新婚！好礼！送不停~", // 分享标题
-                    "desc": "上黄金结婚季，领取万元礼品，打造24K品质婚礼",
+                    "title": "《火王：破晓之战》官方正版手游 预热开启", // 分享标题
+                    "desc": "《火王：破晓之战》邀你共赏全新幻想国风世界",
                     "link": location.href.split('#')[0], // 分享链接
-                    "imgUrl": dxlHttp.e + 'M-Marketing/201710Now/images/weixin.jpg'// 分享图标,
+                    "imgUrl": 'http://www.hw.mangofun.cn/images/ad_1_logo.png' // 分享图标,
                 };
 
                 var weixin = function (){
