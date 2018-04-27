@@ -7,6 +7,7 @@ $(function (){
     weixinFenxiang()
     function weixinFenxiang(){
         $.getJSON('http://www.hw.mangofun.cn/' + 'api/wx?url='+encodeURIComponent(window.location.href)+'&callback=?',function (data){
+            console.log(111)
             data = $.extend({}, data ,{"debug" : true});
             wx.config(data);
             wx.ready(function () {
