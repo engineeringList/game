@@ -477,10 +477,10 @@ footer div {
 
 .moduleTan .moduleTanContent  .phone {
     width: 3.6rem;
-    height: 0.4rem;
+    height: 0.5rem;
     font-size: 0.14rem;
     text-indent: 2em;
-    line-height: 0.4rem;
+    line-height: 0.5rem;
     border: none;
     outline: none;
     background-color: #fff;
@@ -493,10 +493,10 @@ footer div {
 }
 .moduleTan .moduleTanContent .code {
     width: 2.2rem;
-    height: 0.4rem;
+    height: 0.5rem;
     font-size: 0.14rem;
     text-indent: 2em;
-    line-height: 0.4rem;
+    line-height: 0.5rem;
     border: none;
     outline: none;
     background-color: #fff;
@@ -505,10 +505,10 @@ footer div {
 
 .moduleTan .moduleTanContent .verificationCode {
     width: 1.2rem;
-    height: 0.4rem;
+    height: 0.5rem;
     font-size: 0.14rem;
     text-align: center;
-    line-height: 0.4rem;
+    line-height: 0.5rem;
     background-color: #ccb56c;
     border-radius: 5px;
 }
