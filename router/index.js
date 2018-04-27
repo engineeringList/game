@@ -10,5 +10,6 @@ router.get('/', async ( ctx ) => {
 
 require('./sms')(router);
 require('./subscribe')(router);
+require('./wx')(router);
 
 module.exports = router;

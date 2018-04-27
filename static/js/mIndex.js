@@ -3,6 +3,100 @@ $(function (){
 		$("html").css("fontSize",$(window).width()/6.4);
     }).resize();
     
+    //微信分享
+    weixinFenxiang()
+    function weixinFenxiang(){
+        $.getJSON('http://www.hw.mangofun.cn/' + 'wx?act=signature&url='+encodeURIComponent(window.location.href)+'&callback=?',function (data){
+            data = $.extend({}, data ,{"debug" : false});
+            wx.config(data);
+            wx.ready(function () {
+                wx.checkJsApi({
+                    jsApiList: [
+                        'getNetworkType',
+                        'previewImage',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        'onMenuShareQZone'
+                    ]// 需要检测的JS接口列表，所有JS接口列表见附录2,
+                });
+
+                // 朋友圈
+                var wxData1 = {
+                    "title": "《火王：破晓之战》官方正版手游 预热开启", // 分享标题
+                    "link": location.href.split('#')[0], // 分享链接
+                    "imgUrl": dxlHttp.e + 'M-Marketing/201710Now/images/weixin.jpg'// 分享图标,
+                };
+                // 好友
+                var wxData2 = {
+                    "title": "新婚！好礼！送不停~", // 分享标题
+                    "desc": "上黄金结婚季，领取万元礼品，打造24K品质婚礼",
+                    "link": location.href.split('#')[0], // 分享链接
+                    "imgUrl": dxlHttp.e + 'M-Marketing/201710Now/images/weixin.jpg'// 分享图标,
+                };
+
+                var weixin = function (){
+                    wx.onMenuShareTimeline({ //分享到朋友圈
+                        title: wxData1.title,
+                        link: wxData1.link,
+                        imgUrl: wxData1.imgUrl,
+                        success: function () { 
+                            // 用户确认分享后执行的回调函数
+                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
+                            })
+                        }
+                    });
+                    wx.onMenuShareAppMessage({ //分享到朋友
+                        title: wxData2.title,
+                        desc: wxData2.desc,
+                        link: wxData2.link,
+                        imgUrl: wxData2.imgUrl,
+                        success: function () { 
+                            // 用户确认分享后执行的回调函数
+                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
+                            })
+                        }
+                    });
+                    wx.onMenuShareQQ({
+                        title: wxData2.title,
+                        desc: wxData2.desc,
+                        link: wxData2.link,
+                        imgUrl: wxData2.imgUrl,
+                        success: function () { 
+                            // 用户确认分享后执行的回调函数
+                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
+                            })
+                        }
+                    });
+                    wx.onMenuShareWeibo({
+                        title: wxData2.title,
+                        desc: wxData2.desc,
+                        link: wxData2.link,
+                        imgUrl: wxData2.imgUrl,
+                        success: function () { 
+                            // 用户确认分享后执行的回调函数
+                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
+                            })
+                        }
+                    });
+                    wx.onMenuShareQZone({
+                        title: wxData2.title, // 分享标题
+                        desc: wxData2.desc, // 分享描述
+                        link: wxData2.link, // 分享链接
+                        imgUrl: wxData2.imgUrl, // 分享图标
+                        success: function () { 
+                            // 用户确认分享后执行的回调函数
+                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
+                            })
+                        }
+                    });
+                };
+                weixin();
+            });
+        });
+    }
+    
     $.touchSlider({
         slideCell: "#slideshow1",
         titCell: "#slideshow1 .hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
