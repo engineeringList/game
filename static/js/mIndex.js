@@ -43,8 +43,7 @@ $(function (){
                         imgUrl: wxData1.imgUrl,
                         success: function () { 
                             // 用户确认分享后执行的回调函数
-                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
-                            })
+                            console.log(2)
                         }
                     });
                     wx.onMenuShareAppMessage({ //分享到朋友
@@ -54,8 +53,7 @@ $(function (){
                         imgUrl: wxData2.imgUrl,
                         success: function () { 
                             // 用户确认分享后执行的回调函数
-                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
-                            })
+                            console.log(1)
                         }
                     });
                     wx.onMenuShareQQ({
@@ -65,8 +63,7 @@ $(function (){
                         imgUrl: wxData2.imgUrl,
                         success: function () { 
                             // 用户确认分享后执行的回调函数
-                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
-                            })
+                            
                         }
                     });
                     wx.onMenuShareWeibo({
@@ -87,8 +84,7 @@ $(function (){
                         imgUrl: wxData2.imgUrl, // 分享图标
                         success: function () { 
                             // 用户确认分享后执行的回调函数
-                            $.getJSON(dxlHttp.www + "GongJu/statistic/wxSharingNum?type=201710zhengshi2&callback=?" , function (){
-                            })
+                            
                         }
                     });
                 };
