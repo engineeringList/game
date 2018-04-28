@@ -1050,3 +1050,12 @@ footer  .footer-content {
     height: 78px;
     background: url("../images/maoDian_line.png") center center no-repeat;
 }
+
+a.sponsor {
+    display: block;
+    widows: 218px;
+    height: 73px;
+    position: absolute;
+    top: 32px;
+    left: -59px;
+}
