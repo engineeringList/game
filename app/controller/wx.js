@@ -1,8 +1,9 @@
 'use strict';
 
-const appId = 'wxf99c68a3cd4dc199';
+const config = require('../../config');
+const appId = config.wx.appId;
 const nonceStr = 'vtcQMo1TXasdfasdf';
-const secret = '9f8ca364e0bde7af160effff1fec001f';
+const secret = config.wx.secret;
 const crypto = require('crypto');
 const rp = require('request-promise'); 
 const { Wx } = require('../models');
