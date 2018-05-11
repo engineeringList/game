@@ -35,8 +35,8 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     height: 918px;
     min-width: 1400px;
     max-width: 1920px;
-    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_p_ad_1.png") center top no-repeat;
-    background-size: auto 100%;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/herad_pc.jpg") center -70px no-repeat;
+    /* background-size: auto 100%; */
     position: relative;
     overflow: hidden;
 }
@@ -241,7 +241,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .main .ad1  .ad1Font {
     width: 665px;
     height: 715px;
-    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_font.png") center center no-repeat;
+    /* background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_font.png") center center no-repeat; */
     background-size: auto 100%;
     position: absolute;
     top: 0px;
