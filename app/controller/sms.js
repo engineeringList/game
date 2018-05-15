@@ -95,7 +95,7 @@ SmsCtrl.subscribe = async (ctx) => {
                 id: sub.insertId
             }
         })
-        await sms.send(mobile, 'SMS_133150100', `{code: '${member.num}'}`);
+        await sms.send(mobile, 'SMS_134314740', `{code: '${member.num}'}`);
         ctx.body.code = 1;
         ctx.body.data = member;
         ctx.body.msg = '预约成功';
