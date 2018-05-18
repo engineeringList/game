@@ -300,6 +300,16 @@ html {
     left: 1.93rem;
 }
 
+.ad3 .ad3logo {
+    width: 2.54rem;
+    height: 2rem;
+    background: url("../images/m_logo.png") center center no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 11.71rem;
+    left: 1.93rem;
+}
+
 .fenxiang {
     width: 5.59rem;
     height: 4.3rem;
