@@ -1,12 +1,12 @@
 'use strict';
 
-const { Model, createPool} = require('dxl-mysql');
-const { mysql } = require('../../config');
-const gameDb = createPool(mysql);
+const { Model } = require('dxl-mysql');
+const gameDb = require('./db');
 
 module.exports = {
     SmsCode: new Model(gameDb, 'sms_code'),
     Subscribe: new Model(gameDb, 'sms_subscribe'),
     Member: new Model(gameDb, 'member'),
-    Wx: new Model(gameDb, 'wx'),
+    Wx: new Model(gameDb, 'wx'),    
+    User: new Model(gameDb, 'user'),    
 }

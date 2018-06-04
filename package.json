@@ -21,6 +21,7 @@
     "@alicloud/sms-sdk": "^1.0.9",
     "dxl-mysql": "^1.1.1",
     "ejs": "^2.5.9",
+    "jsonwebtoken": "^8.2.2",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.1",
     "koa-compress": "^3.0.0",
