@@ -11,5 +11,6 @@ router.get('/', async ( ctx ) => {
 require('./sms')(router);
 require('./subscribe')(router);
 require('./wx')(router);
+require('./login')(router);
 
 module.exports = router;

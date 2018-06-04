@@ -8,11 +8,18 @@ const views = require('koa-views');
 const morgan = require('koa-morgan');
 const _static = require('koa-static');
 const compress = require('koa-compress');
+const bodyParser = require('koa-bodyparser');
+
+const backInit = require('./app/lib/backInit');
+const adapter = require('./app/lib/adapter');
 
 const app = new Koa();
 
 // 跨域
 app.use(cors());
+
+// 解析body
+app.use(bodyParser())
 
 // 静态文件
 app.use(_static(
@@ -20,7 +27,7 @@ app.use(_static(
 ));
 
 // log
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 
 // gzip
 const options = { threshold: 2048 };
@@ -31,30 +38,11 @@ app.use(views(path.join(__dirname, './view'), {
     extension: 'ejs'
 }))
 
-app.use(async (ctx, next) => {
-    ctx.body = {
-        code: -1,
-        msg: '',
-        data: '',
-    };
-    await next();
-});
+// 初始化返回值
+app.use(backInit);
 
 // 适配移动端
-app.use(async (ctx, next) => {
-    const _ctx = Object.assign({}, ctx);
-    const deviceAgent = ctx.request.header['user-agent'].toLowerCase();
-    const agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/);
-    ctx.render = async (view, options) => {
-      if (agentID) {
-          view = view + '-m';
-      } else {
-          view = view + '-p';
-      }
-      return _ctx.render(view, options)
-    }
-    await next();
-})
+app.use(adapter)
 
 const router = require('./router');
 app.use(router.routes());
