@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 const config = require('../../config');
 
-const LoginCtrl = {};
+const LoginCtrl = module.exports = {};
 
 LoginCtrl.index = async (ctx) => {
     try {
@@ -35,12 +35,10 @@ LoginCtrl.index = async (ctx) => {
             expire: new Date().getTime() + 14 * 24 * 60 * 60 * 1000
         };
     } catch (err) {
-        console.log(err);
+        console.error(err);
         return ctx.body.msg = '服务器异常';
     };
 }
-
-module.exports = LoginCtrl;
 
 const encrypt = (password) => {
     const secret = password + config.salt;
