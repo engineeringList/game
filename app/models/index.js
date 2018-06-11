@@ -9,4 +9,5 @@ module.exports = {
     Member: new Model(gameDb, 'member'),
     Wx: new Model(gameDb, 'wx'),    
     User: new Model(gameDb, 'user'),    
+    News: new Model(gameDb, 'news'),    
 }

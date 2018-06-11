@@ -12,5 +12,6 @@ require('./sms')(router);
 require('./subscribe')(router);
 require('./wx')(router);
 require('./login')(router);
+require('./news')(router);
 
 module.exports = router;

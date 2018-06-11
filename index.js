@@ -36,13 +36,13 @@ app.use(compress(options));
 // 加载模板引擎
 app.use(views(path.join(__dirname, './view'), {
     extension: 'ejs'
-}))
+}));
 
 // 初始化返回值
 app.use(backInit);
 
 // 适配移动端
-app.use(adapter)
+app.use(adapter);
 
 const router = require('./router');
 app.use(router.routes());
