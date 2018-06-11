@@ -1,9 +1,35 @@
-;$(function (){
+$(function (){
 
-    // 游戏特色图片 hover 时交互
-    $(".accordion-item .s-img").mouseover(function() {
-        $(this).parent().addClass("active").siblings().removeClass("active")
+    // QQ微博 小图标切换
+    var _qq =  $(".attention2 .QQ");
+    var _weibo =  $(".attention2 .weibo");
+    var _ErweimaQQ =  $(".attention2 .attention2ErweimaQQ");
+    var _ErweimaWeibo =  $(".attention2 .attention2ErweimaWeibo");
+    _qq.on("click" ,function (){
+        $(this).addClass("on")
+        _weibo.removeClass("on");
+        _ErweimaQQ.addClass("on");
+        _ErweimaWeibo.removeClass("on");
     })
+    _weibo.on("click" ,function (){
+        $(this).addClass("on")
+        _qq.removeClass("on");
+        _ErweimaWeibo.addClass("on");
+        _ErweimaQQ.removeClass("on");
+    })
+
+    //分页 
+    // page 分页点击
+	$("#pages").on("click","a",function(event){
+		event.preventDefault();
+		
+		var _thatHref = $(this).attr("href");
+
+        //交互填充 拼接参数 请求数据 
+        console.log(_thatHref);
+	});
+
+
 
     // 立即预约弹层 交互
     $(".ad1YuyueBtn").on("click" ,function (){
@@ -12,7 +38,6 @@
             $(".moduleTan").addClass("active").show();
         },200)
     });
-
 
     $(".ad1YaoqingBtn").on("click" ,function (){
         $.backgroundShow();
@@ -25,12 +50,7 @@
             $.backgroundHide();
         },200);
     })
-
-    $.get("/api/subscribe/count?callback=?" ,function (data){
-        if(data.code == 1) {
-            $(".ad1YuyueNumColor2").text(data.data.count)
-        }
-    })
+    
 
     // 立即预约弹层 交互
     $(".moduleTan  .closeBtn").on("click" ,function (){
@@ -54,63 +74,6 @@
     $(".selePhone li").on("click" ,function (){
         $(this).addClass("active").siblings().removeClass("active");
     })
-
-    // 视频弹层 交互
-    var html = '<div style="position:relative;left:0;top:0;display:inline-block;width:850px;height:470px">' +
-                    '<video controls="controls" src="https://crazynote.v.netease.com/2017/1218/e5634fa4ed5f4f396e0e151fba098c55qt.mp4" width="850" height="470" autoplay="autoplay" style="background-color: black;">' +
-                        '<source src="https://crazynote.v.netease.com/2017/1218/e5634fa4ed5f4f396e0e151fba098c55qt.mp4" type="video/mp4">'
-                        '</video>'+
-                '</div>';
-
-    $(".ad1Video").click(function() {
-        $(".videoTip").show();
-        setTimeout(function (){
-            $(".videoTip").hide();
-        },2000)
-        // $.alert("视频制作中，敬请期待");
-    });
-     $("#videoCloseBtn").click(function() {
-        $("#videoBox").html("");
-        $("#videoContainer").hide();
-        $.backgroundHide();
-    })
-
-
-    $(".ad3Round1").on("click" ,function (){
-        $(this).addClass("active").siblings().removeClass("active");
-        moveTo(0)
-    });
-    $(".ad3Round2").on("click" ,function (){
-        var scrollTarget = $(".ad2").offset().top;
-        $(this).addClass("active").siblings().removeClass("active");
-        moveTo(scrollTarget);
-    });
-
-    $(".ad3Round3").on("click" ,function (){
-        var scrollTarget = $("footer").offset().top;
-        $(this).addClass("active").siblings().removeClass("active");
-        moveTo(scrollTarget);
-    });
-
-    // 滑屏 函数
-	function moveTo(target) {
-		var _now = $(document).scrollTop();
-		var upOrDown = target - _now;  // 判断方向
-        var scroDIST;      //每次滚动的距离(单位：px)  
-		var stime = 1;         //每次滚动花费时间(单位：毫秒)
-		
-		upOrDown > 0 ?  (scroDIST = 20) : (scroDIST = -20);
-
-		var d = setInterval(function () {  
-			window.scrollTo(_now, _now + scroDIST);  
-			_now = _now + scroDIST;  
-  
-			if((upOrDown > 0 && _now >= target) || (upOrDown < 0 &&  _now <= target) ) {
-				clearInterval(d);  
-			}
-
-		}, stime);  
-    }
 
     $.dingshiqi({
         target : ".verificationCode",
@@ -138,7 +101,7 @@
             $('.verificationCode').removeClass("prohibited");
         }
     });
-
+    // 预约 提交
     var falg = false; 
     $(".sumbitBtn").on("click" , function (){
         if (falg){
@@ -175,23 +138,4 @@
             falg = false;
         })
     })
-
-
-    // 二期新添加 
-    $.touchSlider({
-        slideCell: "#slideshow1",
-        titCell: "#slideshow1 .hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-        mainCell: "#slideshow1 .bd ul",
-        effect: "left",
-        autoPlay: true, //自动播放
-        autoPage: true //自动分页
-    });
-
-    var _newsAdvisory = $(".newsAdvisory");
-    var _leftList = $(".leftList");
-    $(".item1").on("click" ,function (){
-        _newsAdvisory.toggleClass("on");
-        _leftList.toggleClass("on");
-    })
-
 })

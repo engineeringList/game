@@ -154,10 +154,109 @@ html {
     color: #51598e;
 }
 
+/* 二期新增 */
+
+.add_ad1_2 {
+    width: 6.4rem;
+    height:9.33rem;
+    background: url("../images/m_2qi_xiugai_3.png") center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.add_ad1_2 #slideshow1_2 {
+    width: 5.92rem;
+    height: 3.35rem;
+    position: absolute;
+    left: 0.24rem;
+    top: 1.32rem;
+}
+#slideshow1_2 .bd {
+    width: 5.92rem;
+    height: 3.35rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 9;
+}
+
+#slideshow1_2 .bd li{
+    width: 5.92rem;
+    height: 3.35rem;
+}
+
+#slideshow1_2 .bd li img {
+    width: 100%;
+    height: 100%;
+}
+
+#slideshow1_2 .hd {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    z-index: 19;
+    transform: translateX(-50%);
+}
+
+#slideshow1_2 .hd li{
+    float: left;
+    width: 0.21rem;
+    height: 0.21rem;
+    background: url("../images/m_2qi_xiugai_6.png") center center no-repeat;
+    background-size: 100%;
+    text-indent: 999em;
+    margin: 0 0.1rem;
+}
+
+#slideshow1_2 .hd li.on {
+    background: url("../images/m_2qi_xiugai_5.png") center center no-repeat;
+    background-size: 100%;
+}
+
+
+.add_ad1_2  .list {
+    width: 5.8rem;
+    height: 3.35rem;
+    position: absolute;
+    top: 4.8rem;
+    left: 0.32rem;
+}
+
+.add_ad1_2  .list li {
+    height: 0.83rem;
+    width: 100%;
+    border-bottom: 1px dashed #999999;
+}
+
+.add_ad1_2  .list li {
+    height: 0.83rem;
+    width: 100%;
+    font-size: 0.2rem;
+    line-height: 0.83rem;
+    border-bottom: 1px dashed #999999;
+    overflow: hidden;
+}
+
+.add_ad1_2 .listBtn {
+    width: 5.8rem;
+    height: 0.95rem;
+    background: url("../images/m_2qi_xiugai_4.png") center center no-repeat;
+    background-size: 100%;
+    position: absolute;
+    top: 8.3rem;
+    left: 0.32rem;
+}
+.add_ad1_2 .listBtn  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .ad2 {
     width: 6.4rem;
     height: 5.3rem;
-    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g_m_ad2_bg_2.png") center center no-repeat;
+    /* background: url("http://7xs09w.com1.z0.glb.clouddn.com/g_m_ad2_bg_2.png") center center no-repeat; */
+    background: url("../images/m_2qi_xiugai_1.png") center center no-repeat;
     background-size: 100%;
     position: relative;
 }
@@ -227,8 +326,9 @@ html {
 
 .ad3 {
     width: 6.4rem;
-    height: 13.10rem;
-    background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_m_ad3_bg_3.png") center center no-repeat;
+    height: 14.7rem;
+    /* background: url("http://7xs09w.com1.z0.glb.clouddn.com/g1_m_ad3_bg_3.png") center center no-repeat; */
+    background: url("../images/m_2qi_xiugai_2.png") center center no-repeat;
     background-size: 100%;
     position: relative;
     overflow: hidden;

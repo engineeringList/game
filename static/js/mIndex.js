@@ -95,6 +95,15 @@ $(function (){
     }
     
     $.touchSlider({
+        slideCell: "#slideshow1_2",
+        titCell: "#slideshow1_2 .hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+        mainCell: "#slideshow1_2 .bd ul",
+        effect: "left",
+        autoPlay: true, //自动播放
+        autoPage: true //自动分页
+    });
+
+    $.touchSlider({
         slideCell: "#slideshow1",
         titCell: "#slideshow1 .hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
         mainCell: "#slideshow1 .bd ul",

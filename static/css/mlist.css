@@ -1,0 +1,73 @@
+.header {
+    height: 1.07rem;
+    width: 6.4rem;
+    background:url("../images/m_2qi_add_list_1.png") center center no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.listBox {
+    /* height: auto; */
+    width: 6.4rem;
+    min-height: calc(100vh - 2.12rem);
+    min-height: -webkit-calc(100vh - 2.12rem);
+    max-height: 12.17rem;
+    background: url("../images/m_2qi_add_list_3.png") center top no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+
+.listBox  .ulList {
+    padding-left: 0.07rem;
+}
+
+.listBox  .ulList li{
+    height: 0.83rem;
+    font-size: 0.2rem;
+    color: #000000;
+    line-height: 0.83rem;
+    border-bottom: 1px dashed #999999;
+    position: relative;
+}
+.listBox  .ulList li.on{
+    color: #b39b50;
+}
+
+.listBox  .ulList li::before{
+    content:"";
+    display: block;
+    width: 0.6rem;
+    height: 0.83rem;
+    background: url("../images/m_2qi_add_list_2.png") center center no-repeat;
+    background-size: 0.1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.listBox  .ulList li .itemTitle  {
+    margin-left: 0.6rem;
+}
+.listBox  .ulList li .riqi  {
+    margin-right: 0.2rem;
+}
+
+footer {
+    width: 6.4rem;
+    height: 1.05rem;
+    background-color: #3d4684;
+    position: relative;
+}
+
+footer div {
+    width: 6.4rem;
+    color: #ffffff;
+    text-align: center;
+    font-size: 0.18rem;
+    line-height: 0.32rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
