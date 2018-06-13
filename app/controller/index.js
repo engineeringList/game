@@ -6,4 +6,5 @@ module.exports = {
     NewsCtrl: require('./news'),
     LoginCtrl: require('./login'),
     SubscribeCtrl: require('./subscribe'),
+    ToolCtrl: require('./tool'),
 };

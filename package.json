@@ -30,6 +30,7 @@
     "koa-static": "^4.0.2",
     "koa-views": "^6.1.4",
     "koa2-cors": "^2.0.5",
+    "qiniu": "^7.1.7",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   }

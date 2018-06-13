@@ -13,5 +13,6 @@ require('./subscribe')(router);
 require('./wx')(router);
 require('./login')(router);
 require('./news')(router);
+require('./tool')(router);
 
 module.exports = router;
