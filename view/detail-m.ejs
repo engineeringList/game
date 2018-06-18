@@ -17,12 +17,21 @@
     <link rel="stylesheet" href="../static/css/mDetail.css?random=<%= Math.random()*10000 %>">
 </head>
 <body>
-    <section class="header"></section>
+    <%  
+        function timestampToTime(timestamp) {
+            var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+            Y = date.getFullYear() + '/';
+            M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '/';
+            D = date.getDate() + ' ';
+            return Y+M+D;
+        }
+    %>
+    <section class="header" aa='<%= data %>'></section>
     <section class="detail">
-        <h3>06月20开区公共按时大大阿萨德</h3>
-        <div class="source"><span class="author fl">作者：xxx</span><span class="dataTime fr">发表时间：2018-05-17</span></div>
-        <pre>
-            各位游骑兵：
+        <h3><%= data.title %></h3>
+        <div class="source"><span class="author fl">作者：<%= data.author %></span><span class="dataTime fr">发表时间：<%= timestampToTime(data.createTime) %></span></div>
+        <div class="detailContent">
+            <!-- 各位游骑兵：
         
             　　5月8日上午维护之后，安卓渠道出现了部分礼包兑换码可
             以多次兑换的问题，我们在接到反馈后已经临时关闭了礼包兑
@@ -46,8 +55,9 @@
             　因为以上问题给您游戏体验带来的负面影响，我们深表歉意，
             并将于今日下午通过邮件向各位游骑兵发放补偿(讨伐证兑换券
             *1) ，该补偿需要于5月9日16点前在邮箱中领取(15级及以上玩
-            家可领取)。
-        </pre>
+            家可领取)。 -->
+            <%=  data.content %>
+        </div>
     </section>
     <footer>
         <div>

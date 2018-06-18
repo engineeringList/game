@@ -1,7 +1,7 @@
 .header {
     height: 1.07rem;
     width: 6.4rem;
-    background:url("../images/m_2qi_add_list_1.png") center center no-repeat;
+    background:url("http://7xs09w.com1.z0.glb.clouddn.com/m_2qi_add_list_1.png") center center no-repeat;
     background-size: 100%;
     position: relative;
 }
@@ -12,7 +12,7 @@
     min-height: calc(100vh - 2.12rem);
     min-height: -webkit-calc(100vh - 2.12rem);
     max-height: 12.17rem;
-    background: url("../images/m_2qi_add_list_3.png") center top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/m_2qi_add_list_3.png") center top no-repeat;
     background-size: 100%;
     position: relative;
 }
@@ -29,7 +29,14 @@
     border-bottom: 1px dashed #999999;
     position: relative;
 }
-.listBox  .ulList li.on{
+
+.listBox  .ulList li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: #000000;
+}
+.listBox  .ulList li a:active {
     color: #b39b50;
 }
 
@@ -70,4 +77,93 @@ footer div {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+
+
+.pages_wr {
+    margin-top: 50px;
+    height: 44px;
+}
+
+.pages_wr .page {
+    height: 60px;
+    font-size: 14px;
+    line-height: 44px;
+    margin:0 auto;
+    color: #999;
+    text-align: center;
+}
+.pages_wr .page #pagePrev{
+    width: 110px;
+    height: 44px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.pages_wr .page #pagePrev.des{
+    color: #666666;
+    background-color: #aaaaaa;
+}
+
+.pages_wr .page #pagePrev a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.pages_wr .page #pageNext{
+    width: 110px;
+    height: 44px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    border-radius: 4px;
+    margin-right: 20px;
+    background-color: #fff;
+}
+.pages_wr .page #pageNext.des {
+    color: #666666;
+    background-color: #aaaaaa;
+}
+
+
+.pages_wr .page #pageNext a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.pages_wr .page #pageNum{
+    height: 44px;
+    line-height: 22px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.pages_wr .page #pageNum a{
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    line-height: 42px;
+    border: 1px solid #D7D7D7;
+    border-radius: 4px;
+    margin: 0px 10px;
+    text-decoration: none;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+.pages_wr .page #pageNum .cur {
+    background: #ccb56c;
+    border: 1px solid #ccb56c;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 44px;
 }

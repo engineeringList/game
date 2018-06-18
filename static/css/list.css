@@ -26,7 +26,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .main {
     width: 100%;
     min-height: calc(100vh - 192px);
-    background:url("../images/p_2qi_add_list_2.png") center center no-repeat;
+    background:url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_2.png") center center no-repeat;
     position: relative;
     overflow: hidden;
 }
@@ -41,7 +41,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .main .content .logo {
     width: 141px;
     height: 95px;
-    background: url("../images/p_2qi_add_list_1.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_1.png") center center no-repeat;
     background-size: 100%;
     position: absolute;
     left: -215px;
@@ -51,7 +51,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .content .leftBox {
     width: 254px;
     height: 1038px;
-    background: url("../images/p_2qi_add_list_3.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_3.png") center center no-repeat;
     background-size: 100%;
     position: relative;
 }
@@ -67,7 +67,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .content .leftBox .attention .erweima {
     width: 164px;
     height: 180px;
-    background: url("../images/p_2qi_add_list_4.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_4.png") center center no-repeat;
     background-size: 100%;
     margin-bottom: 8px;
 }
@@ -75,7 +75,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .content .leftBox .yuyue .ad1YuyueBtn {
     width: 164px;
     height: 47px;
-    background: url("../images/p_2qi_add_list_5.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_5.png") center center no-repeat;
     background-size: auto 100%;
     margin-bottom: 10px;
     cursor: pointer;
@@ -94,7 +94,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .content .leftBox .yuyue .ad1YaoqingBtn {
     width: 164px;
     height: 47px;
-    background: url("../images/p_2qi_add_list_6.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_6.png") center center no-repeat;
     background-size: auto 100%;
     cursor: pointer;
     transition: all 0.3s linear;
@@ -151,7 +151,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .content .leftBox .attention2 .attention2Erweima .attention2ErweimaQQ {
     width: 139px;
     height: 139px;
-    background: url("../images/p_2qi_add_list_9.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_9.png") center center no-repeat;
     margin: 0 auto;
     display: none;
 }
@@ -159,7 +159,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
 .content .leftBox .attention2 .attention2Erweima .attention2ErweimaWeibo {
     width: 139px;
     height: 139px;
-    background: url("../images/p_2qi_add_list_9.png") center center no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/p_2qi_add_list_9.png") center center no-repeat;
     margin: 0 auto;
     display: none;
 }
@@ -274,10 +274,12 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     display: inline-block;
     vertical-align: middle;
     border-radius: 4px;
+    background-color: #fff;
 }
 
 .pages_wr .page #pagePrev.des{
     color: #666666;
+    background-color: #fff;
 }
 
 .pages_wr .page #pagePrev:hover{
@@ -288,6 +290,9 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     width: 100%;
     height: 100%;
 }
+.pages_wr .page #pagePrev a:hover {
+    color: #ccb56c;
+}
 
 .pages_wr .page #pageNext{
     width: 110px;
@@ -297,6 +302,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     margin-left: 10px;
     border-radius: 4px;
     margin-right: 20px;
+    background-color: #fff;
 }
 
 .pages_wr .page #pageNext:hover{
@@ -307,7 +313,13 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     display: block;
     width: 100%;
     height: 100%;
+    background-color: #fff;
 }
+
+.pages_wr .page #pageNext a:hover {
+    color: #ccb56c;
+}
+
 .pages_wr .page #pageNum{
     height: 44px;
     line-height: 22px;
@@ -330,16 +342,16 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     transition: all 0.1s ease-in-out;
 }
 .pages_wr .page #pageNum a:hover{
-    background: #000;
-    border: 1px solid #000;
+    background: #ccb56c;
+    border: 1px solid #ccb56c;
     color: #fff;
     font-weight: bold;
     font-size: 14px;
     line-height: 44px;
 }
 .pages_wr .page #pageNum .cur {
-    background: #000;
-    border: 1px solid #000;
+    background: #ccb56c;
+    border: 1px solid #ccb56c;
     color: #fff;
     font-weight: bold;
     font-size: 14px;
@@ -364,7 +376,7 @@ header  .loginBtn ,header  .registeredBtn ,header  .tableBtn{
     margin-bottom: 10px;
 }
 
-.contentInfo  pre {
+.contentInfo  .detailContent {
     font-size: 16px;
     line-height: 40px;
     padding: 10px 20px;

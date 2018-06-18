@@ -192,6 +192,66 @@
     $(".item1").on("click" ,function (){
         _newsAdvisory.toggleClass("on");
         _leftList.toggleClass("on");
+    });
+
+
+    var _ulList = $(".rightBox .infoUl");
+	var _type = ['【新闻】','【公告】','【活动】']
+	$.getJSON("http://wwlin.cn/api/news", function(d) {
+        var _html = "";
+		var _rows = d.data.news.rows
+		for(var i = 0 ; i < _rows.length; i++) {
+			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+		}
+		_ulList.append(_html);
+    });
+    
+
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '/';
+        D = date.getDate() + ' ';
+        return M+D;
+    }
+
+
+    $(".listTitle li").on("click" ,function (){
+        $(this).addClass('on').siblings().removeClass("on");
+        var _typeAttr =  $(this).attr("typeAttr");
+        console.log(_typeAttr);
+        if(_typeAttr == "all") {
+            getListAjax(0);
+        }else if (_typeAttr == "1"){
+            getListAjax(1);
+        }else if (_typeAttr == "2"){
+            getListAjax(2);
+        }else if (_typeAttr == "3"){
+            getListAjax(3);
+        }
     })
 
+
+    function getListAjax(type){
+        console.log(type);
+        if(type) {
+            $.getJSON("http://wwlin.cn/api/news?type=" + type, function(d) {
+                var _html = "";
+                var _rows = d.data.news.rows
+                for(var i = 0 ; i < _rows.length; i++) {
+                    _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+                }
+                _ulList.html(_html);
+            });
+        }else {
+            $.getJSON("http://wwlin.cn/api/news", function(d) {
+                var _html = "";
+                var _rows = d.data.news.rows
+                for(var i = 0 ; i < _rows.length; i++) {
+                    _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+                }
+                _ulList.html(_html);
+            });
+        }
+        
+    }
 })

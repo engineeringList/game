@@ -18,19 +18,6 @@ $(function (){
         _ErweimaQQ.removeClass("on");
     })
 
-    //分页 
-    // page 分页点击
-	$("#pages").on("click","a",function(event){
-		event.preventDefault();
-		
-		var _thatHref = $(this).attr("href");
-
-        //交互填充 拼接参数 请求数据 
-        console.log(_thatHref);
-	});
-
-
-
     // 立即预约弹层 交互
     $(".ad1YuyueBtn").on("click" ,function (){
         $.backgroundShow();
@@ -137,5 +124,170 @@ $(function (){
             $(".sumbitBtn").removeClass("active");
             falg = false;
         })
-    })
+    });
+
+    var _ulList = $(".rightBox .itemList");
+	var _type = ['【新闻】','【公告】','【活动】']
+	$.getJSON("http://wwlin.cn/api/news", function(d) {
+        var _html = "";
+		var _rows = d.data.news.rows
+		for(var i = 0 ; i < _rows.length; i++) {
+			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+		}
+        _ulList.append(_html);
+        templatePage(d);
+    });
+    
+
+    function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        Y = date.getFullYear() + '/';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '/';
+        D = date.getDate() + ' ';
+        return Y+M+D;
+    }
+
+    var _typeAttr ; 
+    $(".titleList li").on("click" ,function (){
+        $(this).addClass('on').siblings().removeClass("on");
+        _typeAttr =  $(this).attr("typeAttr");
+        console.log(_typeAttr);
+        if(_typeAttr == "all") {
+            getListAjax(0);
+        }else if (_typeAttr == "1"){
+            getListAjax(1);
+        }else if (_typeAttr == "2"){
+            getListAjax(2);
+        }else if (_typeAttr == "3"){
+            getListAjax(3);
+        }
+    });
+
+    //分页 
+    // page 分页点击
+	$("#pages").on("click","a",function(event){
+		event.preventDefault();
+		
+        var _thatHref = $(this).attr("href");
+
+        if(_typeAttr == "all") {
+            getListAjax(0 , _thatHref);
+        }else if (_typeAttr == "1"){
+            getListAjax(1 , _thatHref);
+        }else if (_typeAttr == "2"){
+            getListAjax(2 , _thatHref);
+        }else if (_typeAttr == "3"){
+            getListAjax(3 , _thatHref);
+        }
+        //交互填充 拼接参数 请求数据 
+        console.log(_thatHref);
+	});
+
+
+    function getListAjax(type , num){
+        num = num || 0;
+        if(type && !num) {
+            $.getJSON("http://wwlin.cn/api/news?type=" + type, function(d) {
+                ajaxFun(d);
+            });
+        }else if (!type && !num) {
+            $.getJSON("http://wwlin.cn/api/news", function(d) {
+                ajaxFun(d);
+            });
+        }else if (type && num){
+            $.getJSON("http://wwlin.cn/api/news?type=" + type  +"&pageNum="+ num, function(d) {
+                ajaxFun(d);
+            });
+        }else if (!type && num){
+            $.getJSON("http://wwlin.cn/api/news?pageNum="+ num, function(d) {
+                ajaxFun(d);
+            });
+        }
+        
+    }
+    function ajaxFun(data){
+        var _html = "";
+        var _rows = data.data.news.rows
+        for(var i = 0 ; i < _rows.length; i++) {
+            _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+        }
+        _ulList.html(_html);
+        templatePage(data);
+    }
+
+    function templatePage(data) {
+        $("#pages").html("");		
+        var page_raw = '';  // 分页按钮  属性前缀
+        var page = 1;   // 当前页
+    
+        var pageSum = Math.ceil(data.data.news.count /10) ;   // 总页码
+        var html = "";
+    
+        if(pageSum >= 0){
+            $("#PagesBar").show();
+            // previous
+            if(page==1){
+                html+= '<span id="pagePrev" class="des">上一页</span>';
+            } else {
+                html += '<span id="pagePrev" ><a target="_self" href="'+ page_raw +(page-1) +'">上一页</a></span>';
+            }
+    
+    
+            //中间页
+            html += '<span id="pageNum" >';
+            if(pageSum <= 7){
+                for(var i=1;i <= pageSum ;i++){
+                    if( i== page){
+                        html += '<a class="cur" href="'+ page_raw + page + '" target="_self"> '+ i +'</a>';
+                    }else{
+                        html +='<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                    }
+                }
+            }else if(pageSum > 7){
+                if(page <=5){
+                    for(var i=1;i <= 5;i++){
+                        if( i== page){
+                            html += '<a class="cur" href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                        }else{                      
+                            if( i == 1){ 
+                                html += '<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                            }else{
+                                html += '<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                            }
+                        }
+                    }
+                    html += "...";
+                    html += '<a href="'+ page_raw + pageSum +'" target="_self"> '+ pageSum +' </a>';
+                }else{
+                    html += '<a href="'+ page_raw + 1 +'" target="_self">1</a>';
+                    html += "...";
+                    for(var i=(page-2);i < page;i++){
+                        html += '<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>' 
+                    }
+                    html += '<a  class="cur" href="'+ page_raw +page + '" target="_self">'+ page +'</a>'
+    
+                    if(pageSum - page >1){
+                        html += "...";
+                        html += '<a href="'+ page_raw + pageSum + '" target="_self">'+ pageSum +'</a>'
+                    }else if(pageSum - page ==1){
+                        html += '<a href="'+ page_raw + pageSum + '" target="_self">'+ pageSum +'</a>'
+                    }
+                }
+            }
+    
+            html += '</span>';
+            // <!-- 下一页 -->
+            if( page == pageSum){
+                html += '<span id="pageNext" class="des">下一页</span>';
+            }else{
+                html += '<span id="pageNext"><a target="_self" href="'+ page_raw + (page+1)+'">下一页</a></span>';
+            }
+            html += '<span class="totalPage ">共找到'+ data.data.news.count +'条</span>';
+        }else{
+            $("#PagesBar").hide();
+        }
+    
+        
+        $("#pages").html(html);
+    }
 })

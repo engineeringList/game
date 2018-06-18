@@ -231,4 +231,28 @@ $(function (){
             falg = false;
         })
     })
+
+
+    var _ulList = $(".add_ad1_2 .list");
+	var _html = "";
+	var _type = ['【新闻】','【公告】','【活动】']
+	$.getJSON("http://wwlin.cn/api/news", function(d) {
+		var _rows = d.data.news.rows
+		for(var i = 0 ; i < _rows.length; i++) {
+			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+		}
+		
+		_ulList.append(_html);
+	});
+
+
+	function timestampToTime(timestamp) {
+        var date = new Date(timestamp * 1000);//时间戳为10位需*1000，时间戳为13位的话不需乘1000
+        // Y = date.getFullYear() + '/';
+        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '/';
+        D = date.getDate() + ' ';
+        return M+D;
+    }
+
+
 })

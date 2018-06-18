@@ -12,7 +12,7 @@
     min-height: -webkit-calc(100vh - 2.52rem);
     padding-top: 0.4rem;
     max-height: 22.59rem;
-    background: url("../images/m_2qi_add_detail_1.png") center top no-repeat;
+    background: url("http://7xs09w.com1.z0.glb.clouddn.com/m_2qi_add_detail_1.png") center top no-repeat;
     background-size: 100%;
     position: relative;
 }
@@ -34,7 +34,7 @@
     margin:  0 auto;
 }
 
-.detail pre {
+.detail .detailContent {
     padding: 0.5rem  0.35rem;
 }
 
