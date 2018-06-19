@@ -31,31 +31,6 @@
         <h3><%= title %></h3>
         <div class="source"><span class="author fl">作者：<%= author %></span><span class="dataTime fr">发表时间：<%= timestampToTime(createTime) %></span></div>
         <div class="detailContent">
-            <!-- 各位游骑兵：
-        
-            　　5月8日上午维护之后，安卓渠道出现了部分礼包兑换码可
-            以多次兑换的问题，我们在接到反馈后已经临时关闭了礼包兑
-            换功能，并 修复了该问题，同时根据数据库记录扣除所有使用
-            该部分礼包兑换码所获得的物品及代币。
-            　　对于利用该漏洞大量进行牟利的玩家，我们将给予严厉的
-            处罚(包括扣除违规所得物品、封禁账号等方式，具体处理方式
-            见下文) ，希望广大玩家能够遵守游戏规则，共同维护良好的游
-            戏环境。
-
-            处罚标准如下：
-            　　违规领取礼包80次及以下(1585名玩家)：扣除违规所得物
-            品
-
-            　　违规领取礼包81次至150次(294名玩家)：账号封禁1天，
-            扣除违规所得
-
-            　　违规领取礼包151次至200次(100名玩家)：账号封禁2天，
-            扣除违规所得
-            
-            　因为以上问题给您游戏体验带来的负面影响，我们深表歉意，
-            并将于今日下午通过邮件向各位游骑兵发放补偿(讨伐证兑换券
-            *1) ，该补偿需要于5月9日16点前在邮箱中领取(15级及以上玩
-            家可领取)。 -->
             <%=  content %>
         </div>
     </section>
@@ -69,8 +44,6 @@
     <script src="./js/jquery-1.7.2.min.js"></script>
     <script src="./js/public.js"></script>
     <script src="./js/touchslider.js"></script>
-    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
-
     <script src="./js/mDetail.js?random=<%= Math.random()*10000 %>"></script>
 </body>
 </html>
