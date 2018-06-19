@@ -30,7 +30,7 @@ $(function() {
 	});
 
   function getListAjax(num){
-    num = num || 0;
+    num = num-1 || 0;
     if(!num) {
         $.getJSON("http://wwlin.cn/api/news", function(d) {
             ajaxFun(d);
