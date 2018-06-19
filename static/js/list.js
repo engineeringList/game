@@ -188,19 +188,19 @@ $(function (){
         num = num - 1 || 0;
         nowNum = num + 1 ;
         if(type && !num) {
-            $.getJSON("http://wwlin.cn/api/news?type=" + type, function(d) {
+            $.getJSON("http://wwlin.cn/api/news?pageSize=10&type=" + type, function(d) {
                 ajaxFun(d);
             });
         }else if (!type && !num) {
-            $.getJSON("http://wwlin.cn/api/news", function(d) {
+            $.getJSON("http://wwlin.cn/api/news?pageSize=10", function(d) {
                 ajaxFun(d);
             });
         }else if (type && num){
-            $.getJSON("http://wwlin.cn/api/news?type=" + type  +"&pageNo="+ num, function(d) {
+            $.getJSON("http://wwlin.cn/api/news?pageSize=10&type=" + type  +"&pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }else if (!type && num){
-            $.getJSON("http://wwlin.cn/api/news?pageNo="+ num, function(d) {
+            $.getJSON("http://wwlin.cn/api/news?pageSize=10&pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }

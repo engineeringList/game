@@ -7,7 +7,7 @@ $(function() {
     var nowNum =1;
 	var _ulList = $(".listBox .ulList");
 	var _type = ['【新闻】','【公告】','【活动】']
-	$.getJSON("http://wwlin.cn/api/news", function(d) {
+	$.getJSON("http://wwlin.cn/api/news?pageSize=10", function(d) {
     var _html = "";
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
@@ -33,11 +33,11 @@ $(function() {
     num = num -1 || 0;
     nowNum = num + 1;
     if(!num) {
-        $.getJSON("http://wwlin.cn/api/news", function(d) {
+        $.getJSON("http://wwlin.cn/api/news?pageSize=10", function(d) {
             ajaxFun(d);
         });
     }else{
-        $.getJSON("http://wwlin.cn/api/news?pageNo="+ num, function(d) {
+        $.getJSON("http://wwlin.cn/api/news?pageSize=10&pageNo="+ num, function(d) {
             ajaxFun(d);
         });
     }
