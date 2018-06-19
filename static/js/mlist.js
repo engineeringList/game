@@ -7,11 +7,11 @@ $(function() {
     var nowNum =1;
 	var _ulList = $(".listBox .ulList");
 	var _type = ['【新闻】','【公告】','【活动】']
-	$.getJSON("http://wwlin.cn/api/news?pageSize=10", function(d) {
+	$.getJSON("/api/news?pageSize=10", function(d) {
     var _html = "";
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
-			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"] - 1 ] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+			_html += '<li><a href= "/news/:'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"] - 1 ] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
 		}
 		
     _ulList.html(_html);
@@ -33,11 +33,11 @@ $(function() {
     num = num -1 || 0;
     nowNum = num + 1;
     if(!num) {
-        $.getJSON("http://wwlin.cn/api/news?pageSize=10", function(d) {
+        $.getJSON("/api/news?pageSize=10", function(d) {
             ajaxFun(d);
         });
     }else{
-        $.getJSON("http://wwlin.cn/api/news?pageSize=10&pageNo="+ num, function(d) {
+        $.getJSON("/api/news?pageSize=10&pageNo="+ num, function(d) {
             ajaxFun(d);
         });
     }
@@ -47,7 +47,7 @@ $(function() {
       var _html = "";
       var _rows = d.data.news.rows
       for(var i = 0 ; i < _rows.length; i++) {
-        _html += '<li><a href= "http://wwl.cn/news/'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"]-1] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+        _html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"]-1] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
       }
       
       _ulList.html(_html);

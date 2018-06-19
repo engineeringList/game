@@ -197,11 +197,11 @@
 
     var _ulList = $(".rightBox .infoUl");
 	var _type = ['【新闻】','【公告】','【活动】']
-	$.getJSON("http://wwlin.cn/api/news", function(d) {
+	$.getJSON("/api/news", function(d) {
         var _html = "";
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
-			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"] - 1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+			_html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"] - 1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
 		}
 		_ulList.append(_html);
     });
@@ -234,20 +234,20 @@
     function getListAjax(type){
         console.log(type);
         if(type) {
-            $.getJSON("http://wwlin.cn/api/news?type=" + type, function(d) {
+            $.getJSON("/api/news?type=" + type, function(d) {
                 var _html = "";
                 var _rows = d.data.news.rows
                 for(var i = 0 ; i < _rows.length; i++) {
-                    _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]-1] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+                    _html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]-1] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
                 }
                 _ulList.html(_html);
             });
         }else {
-            $.getJSON("http://wwlin.cn/api/news", function(d) {
+            $.getJSON("/api/news", function(d) {
                 var _html = "";
                 var _rows = d.data.news.rows
                 for(var i = 0 ; i < _rows.length; i++) {
-                    _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]-1] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+                    _html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl name">'+ _type[_rows[i]["type"]-1] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
                 }
                 _ulList.html(_html);
             });

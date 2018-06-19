@@ -239,7 +239,7 @@ $(function (){
 	$.getJSON("/api/news", function(d) {
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
-			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+			_html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
 		}
 		
 		_ulList.append(_html);

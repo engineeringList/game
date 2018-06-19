@@ -128,11 +128,11 @@ $(function (){
     
     var _ulList = $(".rightBox .itemList");
 	var _type = ['【新闻】','【公告】','【活动】']
-	$.getJSON("http://wwlin.cn/api/news", function(d) {
+	$.getJSON("/api/news", function(d) {
         var _html = "";
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
-			_html += '<li><a href= "http://wwl.cn/news/'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+			_html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
 		}
         _ulList.append(_html);
         templatePage(d);
@@ -188,19 +188,19 @@ $(function (){
         num = num - 1 || 0;
         nowNum = num + 1 ;
         if(type && !num) {
-            $.getJSON("http://wwlin.cn/api/news?pageSize=10&type=" + type, function(d) {
+            $.getJSON("/api/news?pageSize=10&type=" + type, function(d) {
                 ajaxFun(d);
             });
         }else if (!type && !num) {
-            $.getJSON("http://wwlin.cn/api/news?pageSize=10", function(d) {
+            $.getJSON("/api/news?pageSize=10", function(d) {
                 ajaxFun(d);
             });
         }else if (type && num){
-            $.getJSON("http://wwlin.cn/api/news?pageSize=10&type=" + type  +"&pageNo="+ num, function(d) {
+            $.getJSON("/api/news?pageSize=10&type=" + type  +"&pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }else if (!type && num){
-            $.getJSON("http://wwlin.cn/api/news?pageSize=10&pageNo="+ num, function(d) {
+            $.getJSON("/api/news?pageSize=10&pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }
@@ -210,7 +210,7 @@ $(function (){
         var _html = "";
         var _rows = data.data.news.rows
         for(var i = 0 ; i < _rows.length; i++) {
-            _html += '<li><a href= "http://wwl.cn/news/'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+            _html += '<li><a href= "/news/'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
         }
         _ulList.html(_html);
         templatePage(data);
