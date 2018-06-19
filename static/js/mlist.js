@@ -4,7 +4,7 @@ $(function() {
       $("html").css("fontSize", $(window).width() / 6.4);
     })
     .resize();
-
+    var nowNum =0;
 	var _ulList = $(".listBox .ulList");
 	var _type = ['【新闻】','【公告】','【活动】']
 	$.getJSON("http://wwlin.cn/api/news", function(d) {
@@ -30,6 +30,7 @@ $(function() {
 	});
 
   function getListAjax(num){
+    nowNum = num;
     num = num-1 || 0;
     if(!num) {
         $.getJSON("http://wwlin.cn/api/news", function(d) {
@@ -63,7 +64,7 @@ $(function() {
   function templatePage(data) {
       $("#pages").html("");		
       var page_raw = '';  // 分页按钮  属性前缀
-      var page = 1;   // 当前页
+      var page = nowNum;   // 当前页
 
       var pageSum = Math.ceil(data.data.news.count /10) ;   // 总页码
       var html = "";
