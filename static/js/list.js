@@ -125,14 +125,14 @@ $(function (){
             falg = false;
         })
     });
-
+    var nowNum = 1 ;
     var _ulList = $(".rightBox .itemList");
 	var _type = ['【新闻】','【公告】','【活动】']
 	$.getJSON("http://wwlin.cn/api/news", function(d) {
         var _html = "";
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
-			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
 		}
         _ulList.append(_html);
         templatePage(d);
@@ -185,7 +185,8 @@ $(function (){
 
 
     function getListAjax(type , num){
-        num = num || 0;
+        nowNum = num ;
+        num = num - 1 || 0;
         if(type && !num) {
             $.getJSON("http://wwlin.cn/api/news?type=" + type, function(d) {
                 ajaxFun(d);
@@ -195,11 +196,11 @@ $(function (){
                 ajaxFun(d);
             });
         }else if (type && num){
-            $.getJSON("http://wwlin.cn/api/news?type=" + type  +"&pageNum="+ num, function(d) {
+            $.getJSON("http://wwlin.cn/api/news?type=" + type  +"&pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }else if (!type && num){
-            $.getJSON("http://wwlin.cn/api/news?pageNum="+ num, function(d) {
+            $.getJSON("http://wwlin.cn/api/news?pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }
@@ -209,7 +210,7 @@ $(function (){
         var _html = "";
         var _rows = data.data.news.rows
         for(var i = 0 ; i < _rows.length; i++) {
-            _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+            _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
         }
         _ulList.html(_html);
         templatePage(data);
@@ -217,8 +218,7 @@ $(function (){
 
     function templatePage(data) {
         $("#pages").html("");		
-        var page_raw = '';  // 分页按钮  属性前缀
-        var page = 1;   // 当前页
+        var page = nowNum;   // 当前页
     
         var pageSum = Math.ceil(data.data.news.count /10) ;   // 总页码
         var html = "";
@@ -229,7 +229,7 @@ $(function (){
             if(page==1){
                 html+= '<span id="pagePrev" class="des">上一页</span>';
             } else {
-                html += '<span id="pagePrev" ><a target="_self" href="'+ page_raw +(page-1) +'">上一页</a></span>';
+                html += '<span id="pagePrev" ><a target="_self" href="'+(page-1) +'">上一页</a></span>';
             }
     
     
@@ -238,39 +238,39 @@ $(function (){
             if(pageSum <= 7){
                 for(var i=1;i <= pageSum ;i++){
                     if( i== page){
-                        html += '<a class="cur" href="'+ page_raw + page + '" target="_self"> '+ i +'</a>';
+                        html += '<a class="cur" href="' + page + '" target="_self"> '+ i +'</a>';
                     }else{
-                        html +='<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                        html +='<a href="'+ i + '" target="_self">'+ i +'</a>';
                     }
                 }
             }else if(pageSum > 7){
                 if(page <=5){
                     for(var i=1;i <= 5;i++){
                         if( i== page){
-                            html += '<a class="cur" href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                            html += '<a class="cur" href="' + i + '" target="_self">'+ i +'</a>';
                         }else{                      
                             if( i == 1){ 
-                                html += '<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                                html += '<a href="' + i + '" target="_self">'+ i +'</a>';
                             }else{
-                                html += '<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>';
+                                html += '<a href="' + i + '" target="_self">'+ i +'</a>';
                             }
                         }
                     }
                     html += "...";
-                    html += '<a href="'+ page_raw + pageSum +'" target="_self"> '+ pageSum +' </a>';
+                    html += '<a href="' + pageSum +'" target="_self"> '+ pageSum +' </a>';
                 }else{
-                    html += '<a href="'+ page_raw + 1 +'" target="_self">1</a>';
+                    html += '<a href="' + 1 +'" target="_self">1</a>';
                     html += "...";
                     for(var i=(page-2);i < page;i++){
-                        html += '<a href="'+ page_raw + i + '" target="_self">'+ i +'</a>' 
+                        html += '<a href="' + i + '" target="_self">'+ i +'</a>' 
                     }
-                    html += '<a  class="cur" href="'+ page_raw +page + '" target="_self">'+ page +'</a>'
+                    html += '<a  class="cur" href="' +page + '" target="_self">'+ page +'</a>'
     
                     if(pageSum - page >1){
                         html += "...";
-                        html += '<a href="'+ page_raw + pageSum + '" target="_self">'+ pageSum +'</a>'
+                        html += '<a href="' + pageSum + '" target="_self">'+ pageSum +'</a>'
                     }else if(pageSum - page ==1){
-                        html += '<a href="'+ page_raw + pageSum + '" target="_self">'+ pageSum +'</a>'
+                        html += '<a href="' + pageSum + '" target="_self">'+ pageSum +'</a>'
                     }
                 }
             }
@@ -280,7 +280,7 @@ $(function (){
             if( page == pageSum){
                 html += '<span id="pageNext" class="des">下一页</span>';
             }else{
-                html += '<span id="pageNext"><a target="_self" href="'+ page_raw + (page+1)+'">下一页</a></span>';
+                html += '<span id="pageNext"><a target="_self" href="' + (page+1)+'">下一页</a></span>';
             }
             html += '<span class="totalPage ">共找到'+ data.data.news.count +'条</span>';
         }else{
