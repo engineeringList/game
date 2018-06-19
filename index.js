@@ -12,6 +12,7 @@ const bodyParser = require('koa-bodyparser');
 
 const backInit = require('./app/lib/backInit');
 const adapter = require('./app/lib/adapter');
+const turnInterface = require('./app/lib/turnInterface');
 
 const app = new Koa();
 
@@ -43,6 +44,9 @@ app.use(backInit);
 
 // 适配移动端
 app.use(adapter);
+
+// 转接口
+app.use(turnInterface);
 
 const router = require('./router');
 app.use(router.routes());
