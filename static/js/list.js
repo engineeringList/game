@@ -147,7 +147,7 @@ $(function (){
         return Y+M+D;
     }
 
-    var _typeAttr ; 
+    var _typeAttr  = "all"; 
     $(".titleList li").on("click" ,function (){
         $(this).addClass('on').siblings().removeClass("on");
         _typeAttr =  $(this).attr("typeAttr");
@@ -200,7 +200,7 @@ $(function (){
                 ajaxFun(d);
             });
         }else if (!type && num){
-            $.getJSON("http://wwlin.cn/api/news?pageSize=10&pageNo="+ num, function(d) {
+            $.getJSON("http://wwlin.cn/api/news?pageNo="+ num, function(d) {
                 ajaxFun(d);
             });
         }
