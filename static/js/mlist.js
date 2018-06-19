@@ -30,8 +30,8 @@ $(function() {
 	});
 
   function getListAjax(num){
-    nowNum = num;
     num = num -1 || 0;
+    nowNum = num + 1;
     if(!num) {
         $.getJSON("http://wwlin.cn/api/news", function(d) {
             ajaxFun(d);

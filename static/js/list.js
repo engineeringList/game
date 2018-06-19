@@ -1,5 +1,5 @@
 $(function (){
-
+    var nowNum = 1 ;
     // QQ微博 小图标切换
     var _qq =  $(".attention2 .QQ");
     var _weibo =  $(".attention2 .weibo");
@@ -125,14 +125,14 @@ $(function (){
             falg = false;
         })
     });
-    var nowNum = 1 ;
+    
     var _ulList = $(".rightBox .itemList");
 	var _type = ['【新闻】','【公告】','【活动】']
 	$.getJSON("http://wwlin.cn/api/news", function(d) {
         var _html = "";
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
-			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+			_html += '<li><a href= "http://wwl.cn/news/'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
 		}
         _ulList.append(_html);
         templatePage(d);
@@ -185,8 +185,8 @@ $(function (){
 
 
     function getListAjax(type , num){
-        nowNum = num ;
         num = num - 1 || 0;
+        nowNum = num + 1 ;
         if(type && !num) {
             $.getJSON("http://wwlin.cn/api/news?type=" + type, function(d) {
                 ajaxFun(d);
@@ -210,7 +210,7 @@ $(function (){
         var _html = "";
         var _rows = data.data.news.rows
         for(var i = 0 ; i < _rows.length; i++) {
-            _html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
+            _html += '<li><a href= "http://wwl.cn/news/'+ _rows[i]["id"] + '"><span class="fl leftTip">'+ _type[_rows[i]["type"] -1 ] + _rows[i]["title"]+'</span><span class="fr dataTime">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
         }
         _ulList.html(_html);
         templatePage(data);
@@ -226,7 +226,7 @@ $(function (){
         if(pageSum >= 0){
             $("#PagesBar").show();
             // previous
-            if(page==1){
+            if(page == 1){
                 html+= '<span id="pagePrev" class="des">上一页</span>';
             } else {
                 html += '<span id="pagePrev" ><a target="_self" href="'+(page-1) +'">上一页</a></span>';
