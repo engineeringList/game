@@ -15,6 +15,7 @@
     background: url("http://7xs09w.com1.z0.glb.clouddn.com/m_2qi_add_list_3.png") center top no-repeat;
     background-size: 100%;
     position: relative;
+    padding-bottom: 0.2rem;
 }
 
 .listBox  .ulList {
@@ -83,7 +84,6 @@ footer div {
 
 .pages_wr {
     margin-top: 20px;
-    margin-bottom: 20px;
     height: 44px;
 }
 
