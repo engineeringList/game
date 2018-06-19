@@ -220,6 +220,7 @@ html {
     position: absolute;
     top: 4.8rem;
     left: 0.32rem;
+    overflow: hidden;
 }
 
 .add_ad1_2  .list li {

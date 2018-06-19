@@ -36,7 +36,7 @@ $(function() {
             ajaxFun(d);
         });
     }else{
-        $.getJSON("http://wwlin.cn/api/news?pageNum="+ num, function(d) {
+        $.getJSON("http://wwlin.cn/api/news?pageNo="+ num, function(d) {
             ajaxFun(d);
         });
     }

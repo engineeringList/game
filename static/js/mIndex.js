@@ -236,7 +236,7 @@ $(function (){
     var _ulList = $(".add_ad1_2 .list");
 	var _html = "";
 	var _type = ['【新闻】','【公告】','【活动】']
-	$.getJSON("http://wwlin.cn/api/news", function(d) {
+	$.getJSON("/api/news", function(d) {
 		var _rows = d.data.news.rows
 		for(var i = 0 ; i < _rows.length; i++) {
 			_html += '<li><a href= "http://wwl.cn/news/:'+ _rows[i]["id"] + '"><span class="fl itemTitle">'+ _type[_rows[i]["type"]] + _rows[i]["title"]+'</span><span class="fr riqi">'+ timestampToTime(_rows[i]["createTime"]) +'</span></a></li>'
