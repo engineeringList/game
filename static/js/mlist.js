@@ -4,7 +4,7 @@ $(function() {
       $("html").css("fontSize", $(window).width() / 6.4);
     })
     .resize();
-    var nowNum =0;
+    var nowNum =1;
 	var _ulList = $(".listBox .ulList");
 	var _type = ['【新闻】','【公告】','【活动】']
 	$.getJSON("http://wwlin.cn/api/news", function(d) {
@@ -31,7 +31,7 @@ $(function() {
 
   function getListAjax(num){
     nowNum = num;
-    num = num-1 || 0;
+    num = num -1 || 0;
     if(!num) {
         $.getJSON("http://wwlin.cn/api/news", function(d) {
             ajaxFun(d);
@@ -63,7 +63,7 @@ $(function() {
   }
   function templatePage(data) {
       $("#pages").html("");		
-      var page_raw = '';  // 分页按钮  属性前缀
+    //   var page_raw = '';  // 分页按钮  属性前缀
       var page = nowNum;   // 当前页
 
       var pageSum = Math.ceil(data.data.news.count /10) ;   // 总页码
@@ -74,14 +74,14 @@ $(function() {
       if(page==1){
           html+= '<span id="pagePrev" class="des">上一页</span>';
       } else {
-          html += '<span id="pagePrev" ><a target="_self" href="'+ page_raw +(page-1) +'">上一页</a></span>';
+          html += '<span id="pagePrev" ><a target="_self" href="' +(page-1) +'">上一页</a></span>';
       }
 
       // <!-- 下一页 -->
       if( page == pageSum){
           html += '<span id="pageNext" class="des">下一页</span>';
       }else{
-          html += '<span id="pageNext"><a target="_self" href="'+ page_raw + (page+1)+'">下一页</a></span>';
+          html += '<span id="pageNext"><a target="_self" href="' + (page+1)+'">下一页</a></span>';
       }
 
       
