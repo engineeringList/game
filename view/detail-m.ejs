@@ -26,10 +26,10 @@
             return Y+M+D;
         }
     %>
-    <section class="header" aa='<%= data %>'></section>
+    <section class="header"></section>
     <section class="detail">
-        <h3><%= data.title %></h3>
-        <div class="source"><span class="author fl">作者：<%= data.author %></span><span class="dataTime fr">发表时间：<%= timestampToTime(data.createTime) %></span></div>
+        <h3><%= title %></h3>
+        <div class="source"><span class="author fl">作者：<%= author %></span><span class="dataTime fr">发表时间：<%= timestampToTime(createTime) %></span></div>
         <div class="detailContent">
             <!-- 各位游骑兵：
         
@@ -56,7 +56,7 @@
             并将于今日下午通过邮件向各位游骑兵发放补偿(讨伐证兑换券
             *1) ，该补偿需要于5月9日16点前在邮箱中领取(15级及以上玩
             家可领取)。 -->
-            <%=  data.content %>
+            <%=  content %>
         </div>
     </section>
     <footer>

@@ -53,11 +53,11 @@
             <div class="rightBox fr">
                 <div class="title">
                     <h3 class="fl">新闻资讯 / news</h3>
-                    <div class="fr bread"><a href="/">官网首页</a> > <a href="/news">公告</a>> <a  class="on" href=""><%= data.title %></a></div>
+                    <div class="fr bread"><a href="/">官网首页</a> > <a href="/news">公告</a>> <a  class="on" href=""><%= title %></a></div>
                 </div>
                 <div class="contentInfo">
-                    <h3><%= data.title %></h3>
-                    <div class="author clearfix"><span class="fl">作者：<%= data.author %></span><span class="fr">发表时间：<%= timestampToTime(data.createTime) %> ></span></div>
+                    <h3><%= title %></h3>
+                    <div class="author clearfix"><span class="fl">作者：<%= author %></span><span class="fr">发表时间：<%= timestampToTime(createTime) %> ></span></div>
                     <div class="detailContent">
                         <!-- 各位游骑兵：
                             5月8日上午维护之后，安卓渠道出现了部分礼包兑换码可以多次兑换的问题，我们在接到反馈后已经临时关闭了
@@ -72,7 +72,7 @@
                         证兑换券*1) ，该补偿需要于5月9日16点前在邮箱中领取(15级及以上玩家可领取)。
 
                                                                             火王开发组敬上 -->
-                        <%=  data.content %>
+                        <%=  content %>
                     </div>
                 </div>
             </div>
