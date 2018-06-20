@@ -25,9 +25,6 @@ NewsCtrl.create = async (ctx) => {
 NewsCtrl.apiList = async (ctx) => {
     try {
         const options = {
-            where: {
-                status: 1
-            },
             limit: 10,
             offset: 0,
             sort: {
